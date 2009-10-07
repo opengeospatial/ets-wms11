@@ -1,0 +1,8 @@
+WMS 1.1.1 Test Suite Release Notes
+
+
+Changes included in latest revision:
+
+2009-10-7 (cmorris):
+- Fixed tests that did not include a Version parameter (Issue 309)
+- Added tests written for NSG that apply to the base WMS specification
