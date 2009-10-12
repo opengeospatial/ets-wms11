@@ -1,7 +1,10 @@
 WMS 1.1.1 Test Suite Release Notes
 
 
-Changes included in latest revision:
+Changes included in this revision:
+
+2009-10-12 (kstegemoller):
+- Created revision tag wms-1.1.1 r1
 
 2009-10-7 (cmorris):
 - Fixed tests that did not include a Version parameter (Issue 309)
