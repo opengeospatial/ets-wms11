@@ -3,6 +3,12 @@ WMS 1.1.1 Test Suite Release Notes
 
 Changes included in this revision:
 
+2010-08-05 (kstegemoller):
+- Created tag wms-1.1.1 r2
+
+2010-07-05 (aschmitz):
+- changed transparent value to FALSE as suggested in issue #25
+
 2009-10-12 (kstegemoller):
 - Created revision tag wms-1.1.1 r1
 
