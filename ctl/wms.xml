@@ -3099,7 +3099,7 @@ longitude</td>
    <test name="wms:wmsops-getcapabilities-response-2">
       <param name="VAR_WMS_VERSION"/>
       <param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-      <assertion>The response to a GetCapabilities request references a valid copy of the DTD in Annex A.1 at a fully-quallified and accessible location and validates with the DTD.</assertion>
+      <assertion>The response to a GetCapabilities request references a valid copy of the DTD in Annex A.1 at a fully-qualified and accessible location and validates with the DTD.</assertion>
       <comment><![CDATA[<table  summary="Details">
    <tr align="left" valign="top">
       <td>
