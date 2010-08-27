@@ -3,6 +3,12 @@ WMS 1.1.1 Test Suite Release Notes
 
 Changes included in this revision:
 
+2010-08-27 (kstegemoller):
+- updated "Latest" release notes
+
+2010-08-25 (aschmitz):
+- fixed documentation typo
+
 2010-08-05 (kstegemoller):
 - Created tag wms-1.1.1 r2
 
