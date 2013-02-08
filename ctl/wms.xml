@@ -322,7 +322,7 @@ longitude</td>
                <xsl:value-of select="string((/WMT_MS_Capabilities/Capability/Request/GetMap/Format[. = 'image/gif' or .='image/png'])[1])"/>
             </xsl:variable>
             <xsl:variable name="VAR_INHERENT_STYLE">
-               <xsl:value-of select="string(//Layer[starts-with(Title, 'cite') and Style]/Style[1]/Name)"/>
+               <xsl:value-of select="//Layer[starts-with(Title, 'cite') and Style]/Style[1]/Name"/>
             </xsl:variable>
             <xsl:variable name="VAR_LAYER_WITH_INHERENT_STYLE">
                <xsl:value-of select="string(//Layer[starts-with(Title, 'cite') and Style]/Name)"/>
