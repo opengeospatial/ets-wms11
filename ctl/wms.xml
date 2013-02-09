@@ -322,10 +322,10 @@ longitude</td>
                <xsl:value-of select="string((/WMT_MS_Capabilities/Capability/Request/GetMap/Format[. = 'image/gif' or .='image/png'])[1])"/>
             </xsl:variable>
             <xsl:variable name="VAR_INHERENT_STYLE">
-               <xsl:value-of select="//Layer[starts-with(Title, 'cite') and Style]/Style[1]/Name"/>
+               <xsl:value-of select="string(//Layer[starts-with(Title, 'cite') and position()=1]/Style[1]/Name)"/>
             </xsl:variable>
             <xsl:variable name="VAR_LAYER_WITH_INHERENT_STYLE">
-               <xsl:value-of select="string(//Layer[starts-with(Title, 'cite') and Style]/Name)"/>
+               <xsl:value-of select="string(//Layer[starts-with(Title, 'cite') and Style and position()=1]/Name)"/>
             </xsl:variable>
             <xsl:variable name="VAR_INHERITED_STYLE">
                <xsl:value-of select="string(//Layer[starts-with(Title, 'cite') and not(Style)]/ancestor::Layer/Style[1]/Name)"/>
@@ -334,10 +334,10 @@ longitude</td>
                <xsl:value-of select="string(//Layer[starts-with(Title, 'cite') and not(Style) and ancestor::Layer/Style]/Name)"/>
             </xsl:variable>
             <xsl:variable name="VAR_STYLE">
-               <xsl:value-of select="string(//Layer[starts-with(Title, 'cite')]/ancestor-or-self::Layer/Style[1]/Name)"/>
+               <xsl:value-of select="string((//Layer[starts-with(Title, 'cite')]/ancestor-or-self::Layer/Style[1]/Name)[1])"/>
             </xsl:variable>
             <xsl:variable name="VAR_LAYER_WITH_STYLE">
-               <xsl:value-of select="string(//Layer[starts-with(Title, 'cite') and ancestor-or-self::Layer/Style]/Name)"/>
+               <xsl:value-of select="string((//Layer[starts-with(Title, 'cite') and ancestor-or-self::Layer/Style]/Name)[1])"/>
             </xsl:variable>
             <xsl:variable name="VAR_LAYER_WITH_INHERENT_SRS">
                <xsl:value-of select="string((//Layer[starts-with(Title, 'cite') and SRS[contains(., 'EPSG:4326')]])[1]/Name)"/>
@@ -10196,7 +10196,7 @@ longitude</td>
                <xsl:variable name="layer-info">
                   <ctl:call-function name="functions:layer-info">
                      <ctl:with-param name="root-layer" select="$capabilities/Capability/Layer"/>
-                     <ctl:with-param name="preferred-name" select="string($capabilities/Capability//Layer[Name and Style/Name = $style]/Name)"/>
+                     <ctl:with-param name="preferred-name" select="string($capabilities/Capability//Layer[Name and Style/Name = $style and position()=1]/Name)"/>
                      <ctl:with-param name="preferred-srs"></ctl:with-param>
                      <ctl:with-param name="preferred-bbox"></ctl:with-param>
                      <ctl:with-param name="preferred-width">100</ctl:with-param>

@@ -1,7 +1,12 @@
 WMS 1.1.1 Test Suite Release Notes
 
+Changes in r3 (2013-02-09)
+--------------------------
+- Updated config.xml for TEAM-Engine v4
+- Fixed several XPath errors: "A sequence of more than one item is not allowed as the 
+  first argument of string() (<Name/>, <Name/>, ...)" -> select first match.
+- Added note about required libraries
 
-Changes included in this revision:
 
 === Changes included in r2 ===
 
