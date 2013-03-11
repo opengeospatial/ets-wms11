@@ -5,7 +5,7 @@
   <standard>
     <name>Web Map Service (WMS)</name>
     <version>
-      <name>1.1.1 (deprecated)</name>
+      <name>1.1.1</name>
       <suite>
         <namespace-uri>http://www.opengis.net/wms</namespace-uri>
         <prefix>wms</prefix>
