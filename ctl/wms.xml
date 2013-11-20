@@ -6751,7 +6751,7 @@ longitude</td>
          <xsl:for-each select="$request1">
             <xsl:variable name="expression">not(count(/image_stats/model/subimage[count = 2500]) = 2)</xsl:variable>
             <xsl:if test="saxon:evaluate($expression)">
-               <ctl:message>[FAIL] not(count(/image_stats/model/subimage[count = 2500]) = 2) is true.</ctl:message>
+               <ctl:message>[FAILED] not(count(/image_stats/model/subimage[count = 2500]) = 2) is true.</ctl:message>
                <fail />
             </xsl:if>
          </xsl:for-each>
@@ -6853,7 +6853,8 @@ longitude</td>
          <xsl:for-each select="$request1">
             <xsl:variable name="expression">not(count(/image_stats/model/subimage[count = 2500]) = 2)</xsl:variable>
             <xsl:if test="saxon:evaluate($expression)">
-               <fail/>
+              <ctl:message>[FAILED] not(count(/image_stats/model/subimage[count = 2500]) = 2) is true.</ctl:message>
+              <fail/>
             </xsl:if>
          </xsl:for-each>
       </code>
@@ -9601,7 +9602,8 @@ longitude</td>
          <xsl:for-each select="$request1">
             <xsl:variable name="expression">not(/image_stats/model/count = 20000)</xsl:variable>
             <xsl:if test="saxon:evaluate($expression)">
-               <fail/>
+              <ctl:message>[FAILED] not(/image_stats/model/count = 20000) is true.</ctl:message>
+              <fail/>
             </xsl:if>
          </xsl:for-each>
       </code>
@@ -9697,7 +9699,8 @@ longitude</td>
          <xsl:for-each select="$request1">
             <xsl:variable name="expression">not(/image_stats/model/count = 20000)</xsl:variable>
             <xsl:if test="saxon:evaluate($expression)">
-               <fail/>
+              <ctl:message>[FAILED] not(/image_stats/model/count = 20000) is true.</ctl:message>
+              <fail/>
             </xsl:if>
          </xsl:for-each>
       </code>
@@ -10243,7 +10246,8 @@ longitude</td>
                   </ctl:request>
                </xsl:variable>
                <xsl:if test="functions:mime-match($response/response/headers/header[functions:to-lowercase(@name) = 'content-type'], $image-format) = 'false'">
-                  <ctl:fail/>
+                 <ctl:message>[FAILED] Expected Content-Type '<xsl:value-of select="$image-format"/>', but received '<xsl:value-of select="$response//header[functions:to-lowercase(@name) = 'content-type']"/>'.</ctl:message>
+                 <ctl:fail/>
                </xsl:if>
             </xsl:otherwise>
          </xsl:choose>
