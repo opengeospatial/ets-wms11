@@ -6752,6 +6752,7 @@ longitude</td>
             <xsl:variable name="expression">not(count(/image_stats/model/subimage[count = 2500]) = 2)</xsl:variable>
             <xsl:if test="saxon:evaluate($expression)">
                <ctl:message>[FAILED] not(count(/image_stats/model/subimage[count = 2500]) = 2) is true.</ctl:message>
+               <ctl:message>Image regions should be filled with white (#FFFFFF) pixels.</ctl:message>
                <fail />
             </xsl:if>
          </xsl:for-each>
@@ -6854,7 +6855,8 @@ longitude</td>
             <xsl:variable name="expression">not(count(/image_stats/model/subimage[count = 2500]) = 2)</xsl:variable>
             <xsl:if test="saxon:evaluate($expression)">
               <ctl:message>[FAILED] not(count(/image_stats/model/subimage[count = 2500]) = 2) is true.</ctl:message>
-              <fail/>
+              <ctl:message>Image regions should be filled with blue (#0000FF) pixels.</ctl:message>
+              <fail />
             </xsl:if>
          </xsl:for-each>
       </code>
