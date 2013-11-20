@@ -42,7 +42,7 @@
             <documentlocations xmlns="">
                <parm>
                   <name>http://www.galdosinc.com/xml/properties/dtdLocation/WMT_MS_Capabilities</name>
-                  <value>http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd</value>
+                  <value>http://schemas.opengis.net/wms/1.1.1/capabilities_1_1_1.dtd</value>
                </parm>
             </documentlocations>
          </with-param>
