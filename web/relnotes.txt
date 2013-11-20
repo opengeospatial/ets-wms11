@@ -1,5 +1,10 @@
 WMS 1.1.1 Test Suite Release Notes
 
+Changes in r4 (2013-11-DD)
+--------------------------
+- Fixed CITE-828: Broken SRS parameter in some tests
+
+
 Changes in r3 (2013-02-09)
 --------------------------
 - Updated config.xml for TEAM-Engine v4
