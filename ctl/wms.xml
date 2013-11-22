@@ -9582,21 +9582,18 @@ longitude</td>
             <xsl:value-of select="$VAR_TRANSPARENT_FORMAT"/>
           </param>
           <param name="HeIgHt">100</param>
-          <example:ImageStats>
-
-                                                &lt;image_stats&gt;
-                                                        &lt;model value="ARGB"&gt;
-                                                                &lt;count bands="A" sample="0xff"&gt;&lt;/count&gt;
-                                                        &lt;/model&gt;
-                                                &lt;/image_stats&gt;
-
-          </example:ImageStats>
+          <parsers:ImageParser>
+            <parsers:model value="ARGB">
+              <parsers:count bands="A" sample="0xff" />
+            </parsers:model>
+          </parsers:ImageParser>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:variable name="expression">not(/image_stats/model/count = 20000)</xsl:variable>
+        <xsl:variable name="expression">//parsers:count ne '20000'</xsl:variable>
         <xsl:if test="saxon:evaluate($expression)">
-          <ctl:message>[FAILED] not(/image_stats/model/count = 20000) is true.</ctl:message>
+          <ctl:message>[FAILED] //parsers:count ne '20000' is true.</ctl:message>
+          <ctl:message>All pixels should have an alpha value of 1 (fully opaque).</ctl:message>
           <fail/>
         </xsl:if>
       </xsl:for-each>
@@ -9679,21 +9676,18 @@ longitude</td>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_LAKES"/>
           </param>
-          <example:ImageStats>
-
-                                                &lt;image_stats&gt;
-                                                        &lt;model value="ARGB"&gt;
-                                                                &lt;count bands="A" sample="0xff"&gt;&lt;/count&gt;
-                                                        &lt;/model&gt;
-                                                &lt;/image_stats&gt;
-
-          </example:ImageStats>
+          <parsers:ImageParser>
+            <parsers:model value="ARGB">
+              <parsers:count bands="A" sample="0xff" />
+            </parsers:model>
+          </parsers:ImageParser>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:variable name="expression">not(/image_stats/model/count = 20000)</xsl:variable>
+        <xsl:variable name="expression">//parsers:count ne '20000'</xsl:variable>
         <xsl:if test="saxon:evaluate($expression)">
-          <ctl:message>[FAILED] not(/image_stats/model/count = 20000) is true.</ctl:message>
+          <ctl:message>[FAILED] //parsers:count ne '20000' is true.</ctl:message>
+          <ctl:message>All pixels should have an alpha value of 1 (fully opaque).</ctl:message>
           <fail/>
         </xsl:if>
       </xsl:for-each>
@@ -9776,20 +9770,18 @@ longitude</td>
           </param>
           <param name="ReQuEsT">GetMap</param>
           <param name="SrS">EPSG:4326</param>
-          <example:ImageStats>
-
-                                                &lt;image_stats&gt;
-                                                        &lt;model value="ARGB"&gt;
-                                                                &lt;count bands="A" sample="0x00"&gt;&lt;/count&gt;
-                                                        &lt;/model&gt;
-                                                &lt;/image_stats&gt;
-
-          </example:ImageStats>
+          <parsers:ImageParser>
+            <parsers:model value="ARGB">
+              <parsers:count bands="A" sample="0x00" />
+            </parsers:model>
+          </parsers:ImageParser>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:variable name="expression">not(/image_stats/model/count &gt; 0)</xsl:variable>
+        <xsl:variable name="expression">xs:integer(//parsers:count) eq 0</xsl:variable>
         <xsl:if test="saxon:evaluate($expression)">
+          <ctl:message>[FAILED] xs:integer(//parsers:count) eq 0 is true.</ctl:message>
+          <ctl:message>Expected some pixels with an alpha value of 0 (fully transparent).</ctl:message>
           <fail/>
         </xsl:if>
       </xsl:for-each>
