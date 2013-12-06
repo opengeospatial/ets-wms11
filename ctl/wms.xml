@@ -7212,20 +7212,18 @@ longitude</td>
           <param name="SrS">EPSG:4326</param>
           <param name="HeIgHt">100</param>
           <param name="BbOx">-1,-1,1,1</param>
-          <example:ImageStats>
-
-                                                &lt;image_stats&gt;
-                                                        &lt;model value="RGB"&gt;
-                                                                &lt;count bands="RGB" sample="0xff0000"&gt;&lt;/count&gt;
-                                                        &lt;/model&gt;
-                                                &lt;/image_stats&gt;
-
-          </example:ImageStats>
+          <parsers:ImageParser>
+            <parsers:model value="RGB">
+              <parsers:count bands="RGB" sample="0xff0000"></parsers:count>
+            </parsers:model>
+          </parsers:ImageParser>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:variable name="expression">not(/image_stats/model/count = 10000)</xsl:variable>
+        <xsl:variable name="expression">//parsers:count ne '10000'</xsl:variable>
         <xsl:if test="saxon:evaluate($expression)">
+          <ctl:message>[FAILED] //parsers:count ne '10000' is true.</ctl:message>
+          <ctl:message>All pixels of the image returned should be red</ctl:message>
           <fail/>
         </xsl:if>
       </xsl:for-each>
@@ -7309,20 +7307,18 @@ longitude</td>
           <param name="ReQuEsT">GetMap</param>
           <param name="WiDtH">100</param>
           <param name="HeIgHt">100</param>
-          <example:ImageStats>
-
-                                                &lt;image_stats&gt;
-                                                        &lt;model value="ARGB"&gt;
-                                                                &lt;count bands="A" sample="0x00"&gt;&lt;/count&gt;
-                                                        &lt;/model&gt;
-                                                &lt;/image_stats&gt;
-
-          </example:ImageStats>
+           <parsers:ImageParser>
+            <parsers:model value="ARGB">
+              <parsers:count bands="A" sample="0x00" />
+            </parsers:model>
+          </parsers:ImageParser>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:variable name="expression">not(/image_stats/model/count = 10000)</xsl:variable>
+        <xsl:variable name="expression">xs:integer(//parsers:count) eq 0</xsl:variable>
         <xsl:if test="saxon:evaluate($expression)">
+          <ctl:message>[FAILED] xs:integer(//parsers:count) eq 0 is true.</ctl:message>
+          <ctl:message>Expected some pixels with an alpha value of 0 (fully transparent).</ctl:message>
           <fail/>
         </xsl:if>
       </xsl:for-each>
