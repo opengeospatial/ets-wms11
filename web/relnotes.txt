@@ -1,6 +1,6 @@
 WMS 1.1.1 Test Suite Release Notes
 
-Changes in r4 (2013-02-03)
+Changes in r4 (2013-10-03)
 --------------------------
 - Fixed CITE-892: Invalid requests
 - Fixed CITE-891: Color and alpha tests fail
