@@ -14,7 +14,7 @@
         <description>Checks WMS implementations for conformance to OGC 01-068r3.</description>
       </suite>
       <revision>
-        <name>r4</name>
+        <name>r5</name>
         <sources>
           <source>wms/1.1.1/ctl</source>
         </sources>
