@@ -1,6 +1,10 @@
 WMS 1.1.1 Test Suite Release Notes
 
-Changes in r4 (2013-10-03)
+Changes in r5 (2013-12-10)
+-------------------------
+- Fixed CITE-913: Image parser for wms:wmsops-getmap-params-exceptions-5 and wms:wmsops-getmap-params-exceptions-6
+
+Changes in r4 (2013-12-03)
 --------------------------
 - Fixed CITE-892: Invalid requests
 - Fixed CITE-891: Color and alpha tests fail
