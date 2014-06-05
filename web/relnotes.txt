@@ -1,4 +1,10 @@
 WMS 1.1.1 Test Suite Release Notes
+==================================
+
+r6 (2014-MM-DD)
+---------------
+- Fix CITE-828: In functions:layer-info, look for preferred SRS ("EPSG:4326") if given.
+
 
 Changes in r5 (2013-12-10)
 -------------------------

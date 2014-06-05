@@ -10510,19 +10510,19 @@ longitude</td>
             <xsl:value-of select="$WMS_CAPABILITIES/Capability/Request/GetMap/DCPType/HTTP/Get/OnlineResource/@xlink:href"/>
           </ctl:url>
           <ctl:method>get</ctl:method>
-          <ctl:param name="LaYeRs">
-            <xsl:value-of select="functions:encode($layer-info/LayerInfo/@name)"/>
+          <ctl:param name="LAYERS">
+            <xsl:value-of select="encode-for-uri($layer-info/LayerInfo/@name)"/>
           </ctl:param>
-          <ctl:param name="SrS">
-            <xsl:value-of select="functions:encode($layer-info/LayerInfo/@srs)"/>
+          <ctl:param name="SRS">
+            <xsl:value-of select="encode-for-uri($layer-info/LayerInfo/@srs)"/>
           </ctl:param>
           <ctl:param name="BbOx">
             <xsl:value-of select="$layer-info/LayerInfo/@bbox"/>
           </ctl:param>
           <ctl:param name="WiDtH">100</ctl:param>
-          <ctl:param name="ReQuEsT">GetMap</ctl:param>
-          <ctl:param name="StYlEs"/>
-          <ctl:param name="HeIgHt">100</ctl:param>
+          <ctl:param name="request">GetMap</ctl:param>
+          <ctl:param name="styles"/>
+          <ctl:param name="height">100</ctl:param>
           <ctl:param name="FoRmAt">
             <xsl:value-of select="functions:encode($image-format)"/>
           </ctl:param>
