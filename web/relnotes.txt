@@ -1,8 +1,9 @@
 WMS 1.1.1 Test Suite Release Notes
 ==================================
 
-r6 (2014-MM-DD)
+r6 (2014-06-DD)
 ---------------
+- Fix CITE-943: (GetFeatureInfo) tests fail but the response seems valid.
 - Fix CITE-828: In functions:layer-info, look for preferred SRS ("EPSG:4326") if given.
 
 
