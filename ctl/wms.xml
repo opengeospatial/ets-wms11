@@ -8240,6 +8240,11 @@ longitude</td>
           <param name="StYlEs"/>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_LAKES"/>,NonExistant</param>
+<parsers:HTTPParser>
+  <parsers:parse>
+    <parsers:NullParser/>
+  </parsers:parse>
+</parsers:HTTPParser>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
