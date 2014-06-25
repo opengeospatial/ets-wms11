@@ -1,17 +1,21 @@
 WMS 1.1.1 Test Suite Release Notes
 ==================================
 
-r6 (2014-06-DD)
+r7 (2014-06-24)
+------------------
+- added HTTPParser to wmsops-getmap-params-layers-6 test
+
+r6 (2014-06-20)
 ---------------
-- Fix CITE-943: (GetFeatureInfo) tests fail but the response seems valid.
-- Fix CITE-828: In functions:layer-info, look for preferred SRS ("EPSG:4326") if given.
+- Fixed CITE-943: (GetFeatureInfo) tests fail but the response seems valid.
+- Fixed CITE-828: In functions:layer-info, look for preferred SRS ("EPSG:4326") if given.
 
 
-Changes in r5 (2013-12-10)
+r5 (2013-12-10)
 -------------------------
 - Fixed CITE-913: Image parser for wms:wmsops-getmap-params-exceptions-5 and wms:wmsops-getmap-params-exceptions-6
 
-Changes in r4 (2013-12-03)
+r4 (2013-12-03)
 --------------------------
 - Fixed CITE-892: Invalid requests
 - Fixed CITE-891: Color and alpha tests fail
@@ -20,34 +24,27 @@ Changes in r4 (2013-12-03)
 - Fixed CITE-904: Invalid layer/style combinations
 
 
-Changes in r3 (2013-02-09)
+r3 (2013-02-09)
 --------------------------
 - Updated config.xml for TEAM-Engine v4
 - Fixed several XPath errors: "A sequence of more than one item is not allowed as the 
   first argument of string() (<Name/>, <Name/>, ...)" -> select first match.
 - Added note about required libraries
 
+r2 (2010-11-15)
+-----------------------
 
-=== Changes included in r2 ===
+- updated release notes. 2010-11-15 (kstegemoller):
+- updated "Latest" release notes.2010-08-27 (kstegemoller):
+- fixed documentation typo. 2010-08-25 (aschmitz):
+- changed transparent value to FALSE as suggested in issue #25. 2010-07-05 (aschmitz):
 
-2010-11-15 (kstegemoller):
-- updated release notes.
+r1 (2009-10-12)
+-----------------------
+- Created revision tag wms-1.1.1 r1. 2009-10-12 (kstegemoller):
 
-2010-08-27 (kstegemoller):
-- updated "Latest" release notes
-
-2010-08-25 (aschmitz):
-- fixed documentation typo
-
-2010-07-05 (aschmitz):
-- changed transparent value to FALSE as suggested in issue #25
-
-=== Changes included in r1 ===
-
-2009-10-12 (kstegemoller):
-- Created revision tag wms-1.1.1 r1
-
-2009-10-7 (cmorris):
+r0 (2009-10-7) cmorris
+-----------------------------
 - Fixed tests that did not include a Version parameter (Issue 309)
 - Added tests written for NSG that apply to the base WMS specification:
 1	When a layer is requested using escaped characters in its name, the response is a map
