@@ -1,10 +1,10 @@
-# OGC OGC Web Map Service Test-Suite
+# OGC Web Map Service 1.1.1 Test-Suite
 
 The OGC OGC Web Map Service Test-Suite provides the Executable Test Script (ETS) to test implementations against the following specification(s):
 
+  * _Web Map Server Implementation Specification_, version 1.1.1 [OGC 01-068r3](http://portal.opengeospatial.org/files/?artifact_id=1081&version=1&format=pdf)
 
-
-Detailed information about this test suite is available [here]( http://htmlpreview.github.com/?https://github.com/opengeospatial/ets-wms11/blob/master/src/main/web/index.html)
+Detailed information about this test suite is available [here]( http://htmlpreview.github.com/?https://github.com/opengeospatial/ets-wms11/blob/master/src/main/web/index.html).
 
 ## License
 
