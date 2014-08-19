@@ -5,20 +5,19 @@
   <standard>
     <name>Web Map Service (WMS)</name>
     <version>
-      <name>1.1.1</name>
-      <suite>
-        <namespace-uri>http://www.opengis.net/wms</namespace-uri>
+      <name>${spec-version}</name>
+      <suite>        <namespace-uri>http://www.opengis.net/wms</namespace-uri>
         <prefix>wms</prefix>
         <local-name>main_wms</local-name>
-        <title>WMS 1.1.1 Conformance Test Suite</title>
+        <title>WMS ${spec-version} Conformance Test Suite</title>
         <description>Checks WMS implementations for conformance to OGC 01-068r3.</description>
       </suite>
       <revision>
-        <name>r8</name>
+        <name>${project.version}</name>
         <sources>
-          <source>wms/1.1.1/ctl</source>
+          <source>wms/${spec-version}/ctl</source>
         </sources>
-        <webdir>wms/1.1.1/web</webdir>
+        <webdir>wms/${spec-version}/site</webdir>
       </revision>
     </version>
   </standard>
