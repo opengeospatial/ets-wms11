@@ -27,6 +27,7 @@
     </links>
     <menu name="Documentation">
       <item href="index.html" name="Overview" />
+      <item href="Web_Map_Server.html" name="Abstract Test Suite" />
       <item href="relnotes.html" name="Release Notes" />
     </menu>
     <menu ref="reports" />

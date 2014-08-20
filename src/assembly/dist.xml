@@ -11,14 +11,9 @@
   <baseDirectory>${ets-code}/${spec-version}</baseDirectory>
   <includeSiteDirectory>true</includeSiteDirectory>
   <fileSets>
-    <fileSet>
-      <directory>${project.basedir}/src/main/scripts/ctl</directory>
+    <fileSet>      <directory>${project.basedir}/src/main/scripts/ctl</directory>
       <outputDirectory>ctl</outputDirectory>
-    </fileSet>
-    <fileSet>
-      <directory>${project.basedir}/src/main/web</directory>
-      <outputDirectory>web</outputDirectory>
-    </fileSet>
+    </fileSet>    
     <fileSet>
       <directory>${project.basedir}/src/main/resources</directory>
       <outputDirectory>resources</outputDirectory>
@@ -29,7 +24,7 @@
   </fileSets>
   <files>
     <file>
-      <source>${project.basedir}/src/main/config/config.xml</source>
+     <source>${project.basedir}/src/main/config/config.xml</source>
       <filtered>true</filtered>
     </file>
   </files>

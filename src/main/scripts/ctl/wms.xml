@@ -59,9 +59,8 @@
         <h3>Web Map Service</h3>
         <p>The Web Map Service test scripts are designed to test WMS
 implementations based on the WMS 1.1.1 specification.</p>
-        <p>A complete list of tests in the test suite is available in the
-          <a href="wmsats.html" target="otherwindow">Abstract Test Suite</a> document, but note that not
-all of the tests are applicable to all servers. The number of tests
+        <p>Detailed information about the test suite is available <a href="index.html" target="otherwindow">here</a>.</p>
+        <p>The number of tests
 actually executed will depend on the capabilities advertised in the
 capabilities URL supplied below as well as the other options
 selected below.</p>
