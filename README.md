@@ -4,7 +4,7 @@ The OGC OGC Web Map Service Test-Suite provides the Executable Test Script (ETS)
 
   * _Web Map Server Implementation Specification_, version 1.1.1 [OGC 01-068r3](http://portal.opengeospatial.org/files/?artifact_id=1081&version=1&format=pdf)
 
-Detailed information about this test suite is available [here]( http://htmlpreview.github.com/?https://github.com/opengeospatial/ets-wms11/blob/master/src/main/web/index.html).
+Detailed information about this test suite is available [here]( http://opengeospatial.github.io/ets-wms11/).
 
 ## License
 
@@ -14,15 +14,11 @@ Detailed information about this test suite is available [here]( http://htmlprevi
 
 This test is build using [Apache Maven](http://maven.apache.org/) To 
 build the test suite run maven from the root directory.
+```
    % mvn install
-     
-## To test an application:
+```   
 
-For UNIX/OS Users
-   - Clone this repository: **git clone https://github.com/opengeospatial/ets-wms11.git**
-   - Run **build.sh** at the root.
-
-For Windows users and to get more information about running tests in TEAM Engine, check the instructions at the [CITE wiki](http://cite.opengeospatial.org/easytesting)
+Follow the [TEAM ENINE instructions] (http://opengeospatial.github.io/teamengine/installation.html) to install and run the tests in TEAM ENGINE.     
 
 ## Bugs
 
