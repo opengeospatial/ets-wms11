@@ -4992,12 +4992,11 @@ longitude</td>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:if test=".//header[matches(name,'Content-Type','i')]/value ne 'text/xml;charset=UTF-8'">
-          <xsl:if test=".//header[matches(name,'Content-Type','i')]/value ne $VAR_GET_FEATURE_INFO_FORMAT">
-	  <ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>', 
-	  but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
-	  <fail/>
-          </xsl:if>
+        <xsl:variable name="contentType" select=".//header[matches(name,'Content-Type','i')]/value"/> 
+        <xsl:if test="not(contains($contentType, $VAR_GET_FEATURE_INFO_FORMAT))">
+	<ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>', 
+	but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
+	<fail/>
         </xsl:if>
       </xsl:for-each>
     </code>
@@ -5101,12 +5100,11 @@ longitude</td>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:if test=".//header[matches(name,'Content-Type','i')]/value ne 'text/xml;charset=UTF-8'">
-          <xsl:if test=".//header[matches(name,'Content-Type','i')]/value ne $VAR_GET_FEATURE_INFO_FORMAT">
-	  <ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>', 
-	  but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
-	  <fail/>
-          </xsl:if>
+        <xsl:variable name="contentType" select=".//header[matches(name,'Content-Type','i')]/value"/> 
+        <xsl:if test="not(contains($contentType, $VAR_GET_FEATURE_INFO_FORMAT))">
+	<ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>', 
+	but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
+	<fail/>
         </xsl:if>
       </xsl:for-each>
     </code>
