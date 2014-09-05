@@ -10197,8 +10197,8 @@ longitude</td>
             <ctl:call-function name="functions:layer-info">
               <ctl:with-param name="root-layer" select="$capabilities/Capability/Layer"/>
               <ctl:with-param name="preferred-name" select="string($capabilities/Capability//Layer[Name and Style/Name = $style]/Name)"/>
-              <ctl:with-param name="preferred-srs"></ctl:with-param>
-              <ctl:with-param name="preferred-bbox"></ctl:with-param>
+              <ctl:with-param name="preferred-srs">EPSG:4326</ctl:with-param>
+	      <ctl:with-param name="preferred-bbox">0,-0.0020,0.0040,0</ctl:with-param>
               <ctl:with-param name="preferred-width">100</ctl:with-param>
               <ctl:with-param name="preferred-height">100</ctl:with-param>
             </ctl:call-function>
