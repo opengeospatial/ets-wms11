@@ -10187,77 +10187,18 @@ longitude</td>
     <ctl:comment/>
     <ctl:link>http://cite.geoenterpriselab.com/OGCTestData/wms/1.1.1/spec/wms1_1_1.html#wmsops.getmap.params.styles</ctl:link>
     <ctl:code>
-     
       <xsl:choose>
-      
         <xsl:when test="$style = ''">
           <ctl:message>No named layers with a style contained directly in the layer.</ctl:message>
         </xsl:when>
-
-        <xsl:when test="$capabilities/Capability/Layer/Layer[count(Style) &gt; 1]">
+        <xsl:otherwise>
           <xsl:variable name="image-format" select="$capabilities/Capability/Request/GetMap/Format[1]"/>
           <xsl:variable name="layer-info">
             <ctl:call-function name="functions:layer-info">
               <ctl:with-param name="root-layer" select="$capabilities/Capability/Layer"/>
-	      <ctl:with-param name="preferred-name" select="string($capabilities/Capability//Layer[Name and Style/Name = $style]/Name)"/>
-                <ctl:with-param name="preferred-srs">EPSG:4326</ctl:with-param>
-	      <ctl:with-param name="preferred-bbox">0,-0.0020,0.0040,0</ctl:with-param>
-              <ctl:with-param name="preferred-width">100</ctl:with-param>
-              <ctl:with-param name="preferred-height">100</ctl:with-param>
-            </ctl:call-function>
-          </xsl:variable>
-          <xsl:variable name="response">
-            <ctl:request>
-              <ctl:url>
-                <xsl:value-of select="$capabilities/Capability/Request/GetMap/DCPType/HTTP/Get/OnlineResource/@xlink:href"/>
-              </ctl:url>
-              <ctl:method>get</ctl:method>
-              <ctl:param name="StYlEs">
-                <xsl:value-of select="functions:encode($style)"/>
-              </ctl:param>
-              <ctl:param name="BbOx">
-                <xsl:value-of select="$layer-info/LayerInfo/@bbox"/>
-              </ctl:param>
-              <ctl:param name="SrS">
-                <xsl:value-of select="functions:encode($layer-info/LayerInfo/@srs)"/>
-              </ctl:param>
-              <ctl:param name="LaYeRs">
-                <xsl:value-of select="functions:encode($layer-info/LayerInfo/@name)"/>
-              </ctl:param>
-              <ctl:param name="WiDtH">
-                <xsl:value-of select="$layer-info/LayerInfo/@width"/>
-              </ctl:param>
-              <ctl:param name="VeRsIoN">
-                <xsl:value-of select="functions:version()"/>
-              </ctl:param>
-              <ctl:param name="FoRmAt">
-                <xsl:value-of select="functions:encode($image-format)"/>
-              </ctl:param>
-              <ctl:param name="HeIgHt">
-                <xsl:value-of select="$layer-info/LayerInfo/@height"/>
-              </ctl:param>
-              <ctl:param name="ReQuEsT">GetMap</ctl:param>
-              <parsers:HTTPParser>
-                <parsers:parse>
-                  <parsers:NullParser/>
-                </parsers:parse>
-              </parsers:HTTPParser>
-            </ctl:request>
-          </xsl:variable>
-          <xsl:if test="functions:mime-match($response/response/headers/header[functions:to-lowercase(@name) = 'content-type'], $image-format) = 'false'">
-	    <ctl:message>[FAILED] Expected Content-Type '<xsl:value-of select="$image-format"/>', but received '<xsl:value-of select="$response//header[functions:to-lowercase(@name) = 'content-type']"/>'.</ctl:message>
-            <ctl:fail/>
-          </xsl:if>
-        </xsl:when>
-
-        <xsl:when test="$capabilities/Capability/Layer/Layer[count(Style) = 1]">
-          <xsl:variable name="image-format" select="$capabilities/Capability/Request/GetMap/Format[1]"/>
-          <xsl:variable name="layer-info">
-            <ctl:call-function name="functions:layer-info">
-              <ctl:with-param name="root-layer" select="$capabilities/Capability/Layer"/>
-	      <ctl:with-param name="preferred-name" select="string($capabilities/Capability//Layer[Name and Style = $style]/Name)"/>
-                <ctl:with-param name="preferred-srs">EPSG:4326</ctl:with-param>
-	      <ctl:with-param name="preferred-bbox">0,-0.0020,0.0040,0</ctl:with-param>
+              <ctl:with-param name="preferred-name" select="string($capabilities/Capability//Layer[Name and Style/Name = $style]/Name)"/>
+              <ctl:with-param name="preferred-srs"></ctl:with-param>
+              <ctl:with-param name="preferred-bbox"></ctl:with-param>
               <ctl:with-param name="preferred-width">100</ctl:with-param>
               <ctl:with-param name="preferred-height">100</ctl:with-param>
             </ctl:call-function>
@@ -10304,8 +10245,7 @@ longitude</td>
             <ctl:message>[FAILED] Expected Content-Type '<xsl:value-of select="$image-format"/>', but received '<xsl:value-of select="$response//header[functions:to-lowercase(@name) = 'content-type']"/>'.</ctl:message>
             <ctl:fail/>
           </xsl:if>
-        </xsl:when>
-
+        </xsl:otherwise>
       </xsl:choose>
     </ctl:code>
   </ctl:test>
