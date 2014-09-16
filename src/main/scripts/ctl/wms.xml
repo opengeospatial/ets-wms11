@@ -4992,10 +4992,11 @@ longitude</td>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:if test=".//header[matches(name,'Content-Type','i')]/value ne $VAR_GET_FEATURE_INFO_FORMAT">
-          <ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>', 
-          but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
-          <fail/>
+        <xsl:variable name="contentType" select=".//header[matches(name,'Content-Type','i')]/value"/> 
+        <xsl:if test="not(contains($contentType, $VAR_GET_FEATURE_INFO_FORMAT))">
+	<ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>', 
+	but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
+	<fail/>
         </xsl:if>
       </xsl:for-each>
     </code>
@@ -5099,10 +5100,11 @@ longitude</td>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:if test=".//header[matches(name,'Content-Type','i')]/value ne $VAR_GET_FEATURE_INFO_FORMAT">
-          <ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>', 
-          but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
-          <fail/>
+        <xsl:variable name="contentType" select=".//header[matches(name,'Content-Type','i')]/value"/> 
+        <xsl:if test="not(contains($contentType, $VAR_GET_FEATURE_INFO_FORMAT))">
+	<ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>', 
+	but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
+	<fail/>
         </xsl:if>
       </xsl:for-each>
     </code>
@@ -5207,10 +5209,12 @@ longitude</td>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:if test=".//header[matches(name,'Content-Type','i')]/value ne $VAR_GET_FEATURE_INFO_FORMAT">
-          <ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>', 
-          but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
-          <fail/>
+        <xsl:if test=".//header[matches(name,'Content-Type','i')]/value ne 'text/xml;charset=UTF-8'">
+          <xsl:if test=".//header[matches(name,'Content-Type','i')]/value ne $VAR_GET_FEATURE_INFO_FORMAT">
+	  <ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>', 
+	  but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
+	  <fail/>
+          </xsl:if>
         </xsl:if>
       </xsl:for-each>
     </code>
@@ -5315,10 +5319,12 @@ longitude</td>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:if test=".//header[matches(name,'Content-Type','i')]/value ne $VAR_GET_FEATURE_INFO_FORMAT">
-          <ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>', 
-          but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
-          <fail/>
+        <xsl:if test=".//header[matches(name,'Content-Type','i')]/value ne 'text/xml;charset=UTF-8'">
+          <xsl:if test=".//header[matches(name,'Content-Type','i')]/value ne $VAR_GET_FEATURE_INFO_FORMAT">
+	  <ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>', 
+	  but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
+	  <fail/>
+          </xsl:if>
         </xsl:if>
       </xsl:for-each>
     </code>
@@ -8152,11 +8158,6 @@ longitude</td>
           </param>
           <param name="BbOx">-0.0042,-0.0024,0.0042,0.0024</param>
           <param name="WiDtH">168</param>
-<parsers:HTTPParser>
-  <parsers:parse>
-    <parsers:NullParser/>
-  </parsers:parse>
-</parsers:HTTPParser>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
@@ -8239,11 +8240,6 @@ longitude</td>
           <param name="StYlEs"/>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_LAKES"/>,NonExistant</param>
-<parsers:HTTPParser>
-  <parsers:parse>
-    <parsers:NullParser/>
-  </parsers:parse>
-</parsers:HTTPParser>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
@@ -10200,9 +10196,9 @@ longitude</td>
           <xsl:variable name="layer-info">
             <ctl:call-function name="functions:layer-info">
               <ctl:with-param name="root-layer" select="$capabilities/Capability/Layer"/>
-              <ctl:with-param name="preferred-name" select="string($capabilities/Capability//Layer[Name and Style = $style]/Name)"/>
+              <ctl:with-param name="preferred-name" select="string($capabilities/Capability//Layer[Name and Style/Name = $style]/Name)"/>
               <ctl:with-param name="preferred-srs">EPSG:4326</ctl:with-param>
-          <ctl:with-param name="preferred-bbox">0,-0.0020,0.0040,0</ctl:with-param>
+	      <ctl:with-param name="preferred-bbox">0,-0.0020,0.0040,0</ctl:with-param>
               <ctl:with-param name="preferred-width">100</ctl:with-param>
               <ctl:with-param name="preferred-height">100</ctl:with-param>
             </ctl:call-function>
