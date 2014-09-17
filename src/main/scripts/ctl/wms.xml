@@ -1765,7 +1765,7 @@ longitude</td>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:if test="not(normalize-space(substring-before(concat(/headers/header[translate(name, 'CONTYPE', 'contype') = 'content-type']/value, ';'), ';'))=$VAR_GET_FEATURE_INFO_FORMAT)">
+	<xsl:if test="not(contains((/headers/header[translate(name, 'CONTYPE', 'contype') = 'content-type']/value), $VAR_GET_FEATURE_INFO_FORMAT))">
           <fail/>
         </xsl:if>
       </xsl:for-each>
