@@ -12,13 +12,13 @@ Detailed information about this test suite is available [here]( http://opengeosp
 
 ## Building
 
-This test is build using [Apache Maven](http://maven.apache.org/) To 
+This test is build using [Apache Maven](http://maven.apache.org/). To 
 build the test suite run maven from the root directory.
 ```
    % mvn install
 ```   
 
-Follow the [TEAM ENINE instructions] (http://opengeospatial.github.io/teamengine/installation.html) to install and run the tests in TEAM ENGINE.     
+Follow the [TEAM ENGINE instructions] (http://opengeospatial.github.io/teamengine/installation.html) to install and run the tests in TEAM ENGINE.     
 
 ## Bugs
 
