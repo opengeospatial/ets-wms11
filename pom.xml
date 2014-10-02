@@ -93,6 +93,9 @@
          </plugin>
       <plugin>     
         <artifactId>maven-site-plugin</artifactId>
+         <configuration>
+            <relativizeDecorationLinks>false</relativizeDecorationLinks>      
+        </configuration>
         <executions>
           <execution>
             <id>site-package</id>
