@@ -106,17 +106,15 @@
           <tagNameFormat>r@{project.version}</tagNameFormat>
         </configuration>
       </plugin>
-      <plugin>     
+      <plugin>
         <artifactId>maven-site-plugin</artifactId>
-        <configuration>
-          <relativizeDecorationLinks>false</relativizeDecorationLinks>      
-        </configuration>
+        <version>3.4</version>
         <executions>
           <execution>
             <id>site-package</id>
             <phase>prepare-package</phase>
             <goals>
-              <goal>site</goal>
+              <goal>jar</goal>
             </goals>
           </execution>
         </executions>
@@ -127,6 +125,9 @@
             <version>1.6</version>
           </dependency>
         </dependencies>
+        <configuration>
+          <relativizeDecorationLinks>false</relativizeDecorationLinks>
+        </configuration>
       </plugin>
     </plugins>   
   </build>
