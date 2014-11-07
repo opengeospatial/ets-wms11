@@ -1,6 +1,6 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
-## r8 (2014-10-XX)
+## r8 (2014-11-DD)
   * [#12](https://github.com/opengeospatial/ets-wms11/pull/12) - Remove normalize-string, substring-before; Replaced with contain
   * [#9](https://github.com/opengeospatial/ets-wms11/pull/9)- Fix for issue LayerNotDefined - Assertion #5  
   * [#6](https://github.com/opengeospatial/ets-wms11/issues/6)- Adjust configuration
