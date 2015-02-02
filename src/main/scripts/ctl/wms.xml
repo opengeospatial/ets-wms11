@@ -7321,6 +7321,7 @@ longitude</td>
           <param name="WiDtH">100</param>
           <param name="HeIgHt">100</param>
            <parsers:ImageParser>
+            <parsers:metadata />
             <parsers:model value="ARGB">
               <parsers:count bands="A" sample="0x00" />
             </parsers:model>
