@@ -7321,6 +7321,7 @@ longitude</td>
           <param name="WiDtH">100</param>
           <param name="HeIgHt">100</param>
            <parsers:ImageParser>
+            <parsers:metadata />
             <parsers:model value="ARGB">
               <parsers:count bands="A" sample="0x00" />
             </parsers:model>
@@ -7328,12 +7329,32 @@ longitude</td>
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
-        <xsl:variable name="expression">xs:integer(//parsers:count) eq 0</xsl:variable>
-        <xsl:if test="saxon:evaluate($expression)">
-          <ctl:message>[FAILED] xs:integer(//parsers:count) eq 0 is true.</ctl:message>
-          <ctl:message>Expected some pixels with an alpha value of 0 (fully transparent).</ctl:message>
-          <fail/>
-        </xsl:if>
+          <xsl:choose>
+            <!-- if alpha channel exists, check for transparent pixels in channel -->
+            <xsl:when test="exists(//IHDR/@colorType[contains(.,'RGBAlpha')])">
+              <xsl:variable name="expression">xs:integer(//parsers:count) eq 0</xsl:variable>
+              <xsl:if test="saxon:evaluate($expression)">
+                <ctl:message>[FAILED] xs:integer(//parsers:count) eq 0 is true.</ctl:message>
+                <ctl:message>Expected some pixels with an alpha value of 0 (fully transparent).</ctl:message>
+                <fail/>
+              </xsl:if>
+            </xsl:when>
+
+            <!-- if tRNS chunk exists, check tRNS metadata for transparent color value -->
+            <xsl:when test="exists(//tRNS)">
+              <xsl:variable name="expression">((//tRNS/tRNS_RGB/@blue/text()) != '255') and ((//tRNS/tRNS_RGB/@green/text()) != '255') and ((//tRNS/tRNS_RGB/@red/text()) != '255')</xsl:variable>
+              <xsl:if test="saxon:evaluate($expression)">
+                <ctl:message>[FAILED] ((//tRNS/tRNS_RGB/@blue/text()) != '255') and ((//tRNS/tRNS_RGB/@green/text()) != '255') and ((//tRNS/tRNS_RGB/@red/text()) != '255') is true.</ctl:message>
+                <ctl:message>Expected some pixels with an alpha value of 0 (fully transparent).</ctl:message>
+                <fail/>
+              </xsl:if>
+            </xsl:when>
+
+            <xsl:otherwise>
+              <fail/>
+            </xsl:otherwise>
+          </xsl:choose>
+
       </xsl:for-each>
     </code>
   </test>
