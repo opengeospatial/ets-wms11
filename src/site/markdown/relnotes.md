@@ -5,6 +5,7 @@
   * [#9](https://github.com/opengeospatial/ets-wms11/pull/9)- Fix for issue LayerNotDefined - Assertion #5  
   * [#6](https://github.com/opengeospatial/ets-wms11/issues/6)- Adjust configuration
   * [#10](https://github.com/opengeospatial/ets-wms11/pull/10)- Fix issues with reference implementations
+  * Starting this revision, the revision number will follow the conventions described in the [wiki](https://github.com/opengeospatial/cite/wiki/OGC-Compliance-Testing-Tools)
 
 
 ## r7 (2014-06-24)
