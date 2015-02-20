@@ -1,12 +1,14 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
 ## 1.8 (2015-02-20)
+All the log at [Github](https://github.com/opengeospatial/ets-wms11/issues?q=milestone%3A1.8). Noteworthy:
+
   * [#12](https://github.com/opengeospatial/ets-wms11/pull/12) - Remove normalize-string, substring-before; Replaced with contain
   * [#9](https://github.com/opengeospatial/ets-wms11/pull/9)- Fix for issue LayerNotDefined - Assertion #5  
   * [#6](https://github.com/opengeospatial/ets-wms11/issues/6)- Adjust configuration
   * [#10](https://github.com/opengeospatial/ets-wms11/pull/10)- Fix issues with reference implementations
+  * [#20](https://github.com/opengeospatial/ets-wms11/issues/20) - Verifying transparency of PNG image
   * Starting this revision, the revision number will follow the conventions described in the [wiki](https://github.com/opengeospatial/cite/wiki/OGC-Compliance-Testing-Tools)
-
 
 ## r7 (2014-06-24)
   * [#5](https://github.com/opengeospatial/ets-wms11/issues/5) - LayerNotDefined - Assertion #5 - added HTTPParser to wmsops-getmap-params-layers-6 test
