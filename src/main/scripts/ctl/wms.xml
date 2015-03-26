@@ -43,7 +43,6 @@
           <parm>
             <name>http://www.galdosinc.com/xml/properties/dtdLocation/WMT_MS_Capabilities</name>
             <value>http://schemas.opengis.net/wms/1.1.1/capabilities_1_1_1.dtd</value>
-	    <value>http://schemas.opengis.net/wms/1.1.1/WMS_MS_Capabilities.dtd</value>
           </parm>
         </documentlocations>
       </with-param>
@@ -3140,7 +3139,7 @@ longitude</td>
           <param name="VeRsIoN">
             <xsl:value-of select="$VAR_WMS_VERSION"/>
           </param>
-          <wms:GMLValidatingParser/>
+          <parsers:XMLValidatingParser />
         </request>
       </xsl:variable>
       <xsl:for-each select="$request1">
