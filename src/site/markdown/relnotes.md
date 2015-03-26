@@ -1,5 +1,9 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.9 (2015-03-26)
+  
+  * [#13](https://github.com/opengeospatial/ets-wms11/issues/13) - A WMS can now pass if properly implemented the OLD DTD or the new DTD.
+
 ## 1.8 (2015-02-20)
 All the log at [Github](https://github.com/opengeospatial/ets-wms11/issues?q=milestone%3A1.8). Noteworthy:
 
