@@ -3144,7 +3144,7 @@ longitude</td>
       </xsl:variable>
       <xsl:for-each select="$request1">
         <xsl:if test="not(*)">
-          <ctl:warning/>
+          <fail/>
         </xsl:if>
       </xsl:for-each>
     </code>
