@@ -933,7 +933,7 @@ longitude</td>
           <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
                            select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
         </call-test>
-        <xsl:if test="$queryable">
+        <xsl:if test="$queryable_profile">
           <call-test name="wms:wmsops-getfeatureinfo-params-exceptions-1">
             <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
             <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
@@ -943,7 +943,7 @@ longitude</td>
                               select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
           </call-test>
         </xsl:if>
-        <xsl:if test="$queryable">
+        <xsl:if test="$queryable_profile">
           <call-test name="wms:wmsops-getfeatureinfo-params-exceptions-2">
             <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
             <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
@@ -953,7 +953,7 @@ longitude</td>
                               select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
           </call-test>
         </xsl:if>
-        <xsl:if test="$queryable">
+        <xsl:if test="$queryable_profile">
           <call-test name="wms:wmsops-getfeatureinfo-params-feature_count-1">
             <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
             <with-param name="VAR_BASIC_POLYGONS" select="$VAR_BASIC_POLYGONS"/>
@@ -963,7 +963,7 @@ longitude</td>
                               select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
           </call-test>
         </xsl:if>
-        <xsl:if test="$queryable">
+        <xsl:if test="$queryable_profile">
           <call-test name="wms:wmsops-getfeatureinfo-params-feature_count-2">
             <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
             <with-param name="VAR_BASIC_POLYGONS" select="$VAR_BASIC_POLYGONS"/>
@@ -973,7 +973,7 @@ longitude</td>
                               select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
           </call-test>
         </xsl:if>
-        <xsl:if test="$queryable">
+        <xsl:if test="$queryable_profile">
           <call-test name="wms:wmsops-getfeatureinfo-params-info_format-1">
             <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
             <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
@@ -1002,7 +1002,7 @@ longitude</td>
                               select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
           </call-test>
         </xsl:if>
-        <xsl:if test="$queryable">
+        <xsl:if test="$queryable_profile">
           <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-1">
             <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
             <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
@@ -1012,7 +1012,7 @@ longitude</td>
                               select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
           </call-test>
         </xsl:if>
-        <xsl:if test="$queryable">
+        <xsl:if test="$queryable_profile">
           <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-2">
             <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
             <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES"/>
@@ -1023,7 +1023,7 @@ longitude</td>
                               select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
           </call-test>
         </xsl:if>
-        <xsl:if test="$queryable">
+        <xsl:if test="$queryable_profile">
           <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-3">
             <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
             <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES"/>
@@ -1035,7 +1035,7 @@ longitude</td>
                               select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
           </call-test>
         </xsl:if>
-        <xsl:if test="$queryable">
+        <xsl:if test="$queryable_profile">
           <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-4">
             <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
             <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES"/>
@@ -1047,7 +1047,7 @@ longitude</td>
                               select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
           </call-test>
         </xsl:if>
-        <xsl:if test="$queryable">
+        <xsl:if test="$queryable_profile">
           <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-5">
             <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
             <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
@@ -1464,12 +1464,14 @@ longitude</td>
         </xsl:if>
 
         <!-- Extended tests -->
-        <ctl:for-each select="$VAR_WMS_CAPABILITIES//Capability/Request/GetFeatureInfo/Format">
-          <ctl:call-test name="wms:wmsops-getfeatureinfo-each-info_format">
-            <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*"/>
-            <ctl:with-param name="FORMAT" select="." label="each GetFeatureInfo format" label-expr="concat('format &quot;', ., '&quot;')"/>
-          </ctl:call-test>
-        </ctl:for-each>
+        <xsl:if test="$queryable_profile">
+          <ctl:for-each select="$VAR_WMS_CAPABILITIES//Capability/Request/GetFeatureInfo/Format">
+            <ctl:call-test name="wms:wmsops-getfeatureinfo-each-info_format">
+              <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*"/>
+              <ctl:with-param name="FORMAT" select="." label="each GetFeatureInfo format" label-expr="concat('format &quot;', ., '&quot;')"/>
+            </ctl:call-test>
+          </ctl:for-each>
+        </xsl:if>
 
         <ctl:for-each select="$VAR_WMS_CAPABILITIES//Capability//Layer/Style[not(Name=../preceding::Layer/Style/Name) and not(Name=../ancestor::Layer/Style/Name)]/Name">
           <ctl:call-test name="wms:wmsops-getmap-each-style">
