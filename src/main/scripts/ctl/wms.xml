@@ -7351,6 +7351,7 @@ longitude</td>
             </xsl:when>
 
             <xsl:otherwise>
+              <ctl:message>Neither alpha channel exists nor tRNS chunk exists.</ctl:message>
               <fail/>
             </xsl:otherwise>
           </xsl:choose>
