@@ -1473,13 +1473,14 @@ longitude</td>
           </ctl:for-each>
         </xsl:if>
 
-        <ctl:for-each select="$VAR_WMS_CAPABILITIES//Capability//Layer/Style[not(Name=../preceding::Layer/Style/Name) and not(Name=../ancestor::Layer/Style/Name)]/Name">
-          <ctl:call-test name="wms:wmsops-getmap-each-style">
-            <ctl:with-param name="capabilities" select="$VAR_WMS_CAPABILITIES/*"/>
-            <ctl:with-param name="style" select="string(.)" label="each style" label-expr="concat('style &quot;', ., '&quot;')"/>
-          </ctl:call-test>
+        <ctl:for-each select="$VAR_WMS_CAPABILITIES//Layer/Style[not(Name=../ancestor::Layer/Style/Name)]">
+            <ctl:call-test name="wms:wmsops-getmap-each-style">
+              <ctl:with-param name="capabilities" select="$VAR_WMS_CAPABILITIES/*"/>
+              <ctl:with-param name="style" select="./Name" label="each style" label-expr="concat('style &quot;', ./Name, '&quot;')"/>
+              <ctl:with-param name="layer" select="../Name"/>
+            </ctl:call-test>
         </ctl:for-each>
-
+        
         <ctl:for-each select="$VAR_WMS_CAPABILITIES//Layer/Name">
           <ctl:call-test name="wms:wmsops-getmap-each-layer">
             <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*"/>
@@ -10201,6 +10202,7 @@ longitude</td>
   <ctl:test name="wms:wmsops-getmap-each-style">
     <ctl:param name="capabilities"/>
     <ctl:param name="style"/>
+    <ctl:param name="layer"/>
     <ctl:assertion>For each of the Styles in the capabilities document, when a GetMap request is made with the STYLES parameter set to the element of the style, then the response is valid.</ctl:assertion>
     <ctl:comment/>
     <ctl:link>http://cite.geoenterpriselab.com/OGCTestData/wms/1.1.1/spec/wms1_1_1.html#wmsops.getmap.params.styles</ctl:link>
@@ -10214,9 +10216,9 @@ longitude</td>
           <xsl:variable name="layer-info">
             <ctl:call-function name="functions:layer-info">
               <ctl:with-param name="root-layer" select="$capabilities/Capability/Layer"/>
-              <ctl:with-param name="preferred-name" select="string($capabilities/Capability//Layer[Name and Style/Name = $style]/Name)"/>
+              <ctl:with-param name="preferred-name" select="$layer"/>
               <ctl:with-param name="preferred-srs">EPSG:4326</ctl:with-param>
-	      <ctl:with-param name="preferred-bbox">0,-0.0020,0.0040,0</ctl:with-param>
+	          <ctl:with-param name="preferred-bbox">0,-0.0020,0.0040,0</ctl:with-param>
               <ctl:with-param name="preferred-width">100</ctl:with-param>
               <ctl:with-param name="preferred-height">100</ctl:with-param>
             </ctl:call-function>
@@ -10263,6 +10265,7 @@ longitude</td>
             <ctl:message>[FAILED] Expected Content-Type '<xsl:value-of select="$image-format"/>', but received '<xsl:value-of select="$response//header[functions:to-lowercase(@name) = 'content-type']"/>'.</ctl:message>
             <ctl:fail/>
           </xsl:if>
+          <ctl:message>Layer: <xsl:value-of select="$layer"/> Style: <xsl:value-of select="$style"/></ctl:message>
         </xsl:otherwise>
       </xsl:choose>
     </ctl:code>
