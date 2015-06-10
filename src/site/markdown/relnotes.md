@@ -1,5 +1,12 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.10 (2015-06-10)
+
+   * [#32](https://api.github.com/repos/opengeospatial/ets-wms11/issues/32) - wms:wmsops-getmap-each-style
+   * [#30](https://api.github.com/repos/opengeospatial/ets-wms11/issues/30) - Incorrect failing for Transparency due to PNG
+   * [#24](https://api.github.com/repos/opengeospatial/ets-wms11/issues/24) - GFI tests executed without choosing GFI for testing
+   * [#23](https://api.github.com/repos/opengeospatial/ets-wms11/issues/23) - wmsops-getfeatureinfo-params-query_layers-3 and wmsops-
+
 ## 1.9 (2015-03-26)
   
   * [#13](https://github.com/opengeospatial/ets-wms11/issues/13) - A WMS can now pass if properly implemented the OLD DTD or the new DTD.
