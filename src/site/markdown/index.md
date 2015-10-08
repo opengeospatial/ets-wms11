@@ -7,8 +7,8 @@ The [_Test Requirements and Assertions for WMS 1.1.1_](Web_Map_Server.html) docu
 
 # Test Data
 
- * Description about the test data is [here](<Web_Map_Server.html%23B.-Test%20Data%20Definition>).
- * Download the test data [here](data/data-wms-1.1.1).
+ * Description about the test data is [here](Web_Map_Server.html).
+ * Download the test data [here](data/data-wms-1.1.1.zip).
 
 # Reference Implementations
 GeoServer
