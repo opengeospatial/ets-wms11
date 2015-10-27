@@ -1,5 +1,9 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.11 (2015-10-27)
+   * [#39](https://github.com/opengeospatial/ets-wms11/issues/39) - wmsops-getmap-each-srs does not handle AUTO correctly
+   * [#35](https://github.com/opengeospatial/ets-wms11/issues/35) - Documentation problems for WMS 1.1.1
+
 ## 1.10 (2015-06-10)
 
    * [#32](https://api.github.com/repos/opengeospatial/ets-wms11/issues/32) - wms:wmsops-getmap-each-style
