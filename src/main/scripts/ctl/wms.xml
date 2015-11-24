@@ -7348,8 +7348,12 @@ longitude</td>
             </xsl:when>
 
             <xsl:otherwise>
-              <ctl:message>Neither alpha channel exists nor tRNS chunk exists.</ctl:message>
-              <fail/>
+              <xsl:variable name="expression">xs:integer(//parsers:count) eq 0</xsl:variable>
+              <xsl:if test="saxon:evaluate($expression)">
+                <ctl:message>Neither alpha channel exists nor tRNS chunk exists and xs:integer(//parsers:count) eq 0 is true.</ctl:message>
+                <ctl:message>Expected some pixels with an alpha value of 0 (fully transparent).</ctl:message>
+                <fail/>
+              </xsl:if>
             </xsl:otherwise>
           </xsl:choose>
 
