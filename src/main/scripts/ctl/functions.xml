@@ -93,15 +93,15 @@
          <xsl:variable name="srs">
             <xsl:choose>
                <xsl:when test="$preferred-srs">
-                  <xsl:if test="$root-layer//Layer[Name = $layer-name]/ancestor-or-self::Layer[SRS = $preferred-srs]">
+                  <xsl:if test="$root-layer//ancestor-or-self::Layer[Name = $layer-name]/ancestor-or-self::Layer[SRS = $preferred-srs]">
                     <xsl:value-of select="$preferred-srs"/>
                   </xsl:if>
                </xsl:when>
-               <xsl:when test="$root-layer//Layer[Name = $layer-name]/ancestor-or-self::Layer/BoundingBox">
-                  <xsl:value-of select="$root-layer//Layer[Name = $layer-name]/ancestor-or-self::Layer[1]/BoundingBox[1]/@SRS"/>
+               <xsl:when test="$root-layer//ancestor-or-self::Layer[Name = $layer-name]/ancestor-or-self::Layer/BoundingBox">
+                  <xsl:value-of select="$root-layer//ancestor-or-self::Layer[Name = $layer-name]/ancestor-or-self::Layer[1]/BoundingBox[1]/@SRS"/>
                </xsl:when>
-               <xsl:when test="$root-layer//Layer[Name = $layer-name]/ancestor-or-self::Layer/SRS">
-                  <xsl:value-of select="$root-layer//Layer[Name = $layer-name]/ancestor-or-self::Layer[1]/SRS[1]"/>
+               <xsl:when test="$root-layer//ancestor-or-self::Layer[Name = $layer-name]/ancestor-or-self::Layer/SRS">
+                  <xsl:value-of select="$root-layer//ancestor-or-self::Layer[Name = $layer-name]/ancestor-or-self::Layer[1]/SRS[1]"/>
                </xsl:when>
                <xsl:otherwise>NoSRSForLayer</xsl:otherwise>
             </xsl:choose>
