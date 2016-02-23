@@ -1,5 +1,8 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.13 (2016-02-23)
+   * [#43](https://github.com/opengeospatial/ets-wms11/issues/43) - Empty SRS - wmsops-getmap-each-layer
+
 ## 1.12 (2015-11-30)
    * [#40](https://github.com/opengeospatial/ets-wms11/issues/40) - wms:wmsops-getmap-params-exceptions-6 fails for gif images with indexed tranparency
 
