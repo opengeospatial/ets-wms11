@@ -1746,7 +1746,7 @@ longitude</td>
             <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
           </param>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="Y">60</param>
           <param name="WiDtH">200</param>
@@ -4017,7 +4017,7 @@ longitude</td>
           <method>get</method>
           <param name="ReQuEsT">GetFeatureInfo</param>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="VeRsIoN">
             <xsl:value-of select="$VAR_WMS_VERSION"/>
@@ -4125,7 +4125,7 @@ longitude</td>
             <xsl:value-of select="$VAR_WMS_VERSION"/>
           </param>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="Y">50</param>
           <param name="QuErY_LaYeRs">UndefinedLayer</param>
@@ -4293,7 +4293,7 @@ longitude</td>
           <param name="BbOx">-2,2,2,6</param>
           <param name="StYlEs"/>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="SrS">EPSG:4326</param>
           <param name="LaYeRs">
@@ -4338,7 +4338,7 @@ longitude</td>
           <param name="X">50</param>
           <param name="HeIgHt">100</param>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <example:StringLength/>
         </request>
@@ -4491,7 +4491,7 @@ longitude</td>
             <xsl:value-of select="$VAR_BASIC_POLYGONS"/>
           </param>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="X">50</param>
           <param name="ReQuEsT">GetFeatureInfo</param>
@@ -4530,7 +4530,7 @@ longitude</td>
           </param>
           <param name="HeIgHt">100</param>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="QuErY_LaYeRs">
             <xsl:value-of select="$VAR_BASIC_POLYGONS"/>
@@ -4978,7 +4978,7 @@ longitude</td>
             <xsl:value-of select="$VAR_WMS_VERSION"/>
           </param>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="WiDtH">200</param>
           <param name="LaYeRs">
@@ -5096,7 +5096,7 @@ longitude</td>
           <param name="X">60</param>
           <param name="ReQuEsT">GetFeatureInfo</param>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="BbOx">0,-0.0020,0.0040,0</param>
           <parsers:HeadersParser/>
@@ -5192,7 +5192,7 @@ longitude</td>
           <param name="StYlEs"/>
           <param name="HeIgHt">100</param>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="Y">60</param>
           <param name="VeRsIoN">
@@ -5295,7 +5295,7 @@ longitude</td>
           <param name="SrS">EPSG:4326</param>
           <param name="ReQuEsT">GetFeatureInfo</param>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_NAMED_PLACES"/>,<xsl:value-of select="$VAR_LAKES"/>,<xsl:value-of select="$VAR_STREAMS"/>
@@ -5403,7 +5403,7 @@ longitude</td>
             <xsl:value-of select="$VAR_LAKES"/>
           </param>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="FoRmAt">
             <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
@@ -5506,7 +5506,7 @@ longitude</td>
           <param name="ReQuEsT">GetFeatureInfo</param>
           <param name="HeIgHt">100</param>
           <param name="InFo_fOrMaT">
-            <xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="WiDtH">100</param>
           <param name="LaYeRs">
