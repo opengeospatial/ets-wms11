@@ -1,5 +1,8 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.14 (2016-04-29)
+   * [#47](https://github.com/opengeospatial/ets-wms11/issues/47) - value of INFO_FORMAT parameter not URL-encoded
+
 ## 1.13 (2016-02-23)
    * [#43](https://github.com/opengeospatial/ets-wms11/issues/43) - Empty SRS - wmsops-getmap-each-layer
 
