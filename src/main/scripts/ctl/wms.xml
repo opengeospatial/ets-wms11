@@ -1654,7 +1654,7 @@ longitude</td>
             <xsl:value-of select="$VAR_LAKES"/>
           </param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <parsers:HeadersParser/>
         </request>
@@ -1743,7 +1743,7 @@ longitude</td>
           <param name="SrS">EPSG:4326</param>
           <param name="X">60</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="InFo_fOrMaT">
             <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
@@ -4028,7 +4028,7 @@ longitude</td>
           <param name="BbOx">0,-0.0020,0.0040,0</param>
           <param name="StYlEs"/>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="SrS">EPSG:4326</param>
           <param name="Y">50</param>
@@ -4141,7 +4141,7 @@ longitude</td>
           <param name="WiDtH">200</param>
           <param name="ExCePtIoNs">application/vnd.ogc.se_xml</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <parsers:HeadersParser/>
         </request>
@@ -4277,7 +4277,7 @@ longitude</td>
           </url>
           <method>get</method>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="ReQuEsT">GetFeatureInfo</param>
           <param name="WiDtH">100</param>
@@ -4321,7 +4321,7 @@ longitude</td>
             <xsl:value-of select="$VAR_BASIC_POLYGONS"/>
           </param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="VeRsIoN">
             <xsl:value-of select="$VAR_WMS_VERSION"/>
@@ -4480,7 +4480,7 @@ longitude</td>
           <param name="Y">50</param>
           <param name="StYlEs"/>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="HeIgHt">100</param>
           <param name="LaYeRs">
@@ -4520,7 +4520,7 @@ longitude</td>
           <param name="Y">50</param>
           <param name="ReQuEsT">GetFeatureInfo</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="SrS">EPSG:4326</param>
           <param name="FeAtUrE_CoUnT">2</param>
@@ -4645,7 +4645,7 @@ longitude</td>
             <xsl:value-of select="$VAR_WMS_VERSION"/>
           </param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_LAKES"/>
@@ -4780,7 +4780,7 @@ longitude</td>
           <param name="Y">60</param>
           <param name="ReQuEsT">GetFeatureInfo</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_LAKES"/>
@@ -4871,7 +4871,7 @@ longitude</td>
           </param>
           <param name="BbOx">0,-0.0020,0.0040,0</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="ReQuEsT">GetFeatureInfo</param>
           <param name="VeRsIoN">
@@ -4986,7 +4986,7 @@ longitude</td>
           </param>
           <param name="SrS">EPSG:4326</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="StYlEs"/>
           <param name="HeIgHt">100</param>
@@ -5086,7 +5086,7 @@ longitude</td>
           </param>
           <param name="Y">60</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="QuErY_LaYeRs">
             <xsl:value-of select="$VAR_NAMED_PLACES"/>,<xsl:value-of select="$VAR_LAKES"/>
@@ -5203,7 +5203,7 @@ longitude</td>
           </param>
           <param name="SrS">EPSG:4326</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="X">60</param>
           <param name="ReQuEsT">GetFeatureInfo</param>
@@ -5308,7 +5308,7 @@ longitude</td>
           <param name="Y">60</param>
           <param name="StYlEs"/>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="QuErY_LaYeRs">
             <xsl:value-of select="$VAR_LAKES"/>
@@ -5406,7 +5406,7 @@ longitude</td>
             <xsl:value-of select="functions:encode($VAR_GET_FEATURE_INFO_FORMAT)"/>
           </param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="Y">60</param>
           <param name="ReQuEsT">GetFeatureInfo</param>
@@ -5519,7 +5519,7 @@ longitude</td>
           </param>
           <param name="StYlEs"/>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="SrS">EPSG:4326</param>
         </request>
@@ -5686,7 +5686,7 @@ longitude</td>
             <xsl:value-of select="$VAR_WMS_VERSION"/>
           </param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_LOSSLESS_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_LOSSLESS_FORMAT)"/>
           </param>
           <param name="ReQuEsT">GetMap</param>
           <example:ImageStats>
@@ -5767,7 +5767,7 @@ longitude</td>
           </url>
           <method>get</method>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_LOSSLESS_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_LOSSLESS_FORMAT)"/>
           </param>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_PONDS"/>
@@ -5901,7 +5901,7 @@ longitude</td>
           </param>
           <param name="BbOx">-0.0022,0.0014,-0.0012,0.0022</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_LOSSLESS_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_LOSSLESS_FORMAT)"/>
           </param>
           <param name="WiDtH">100</param>
           <param name="HeIgHt">100</param>
@@ -5947,7 +5947,7 @@ longitude</td>
           <param name="BbOx">359.9978,0.0014,359.9988,0.0022</param>
           <param name="HeIgHt">100</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_LOSSLESS_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_LOSSLESS_FORMAT)"/>
           </param>
           <example:ImageStats>
 
@@ -6072,7 +6072,7 @@ longitude</td>
           <param name="BbOx">-0.005,-0.0025,0.005,0.0025</param>
           <param name="StYlEs"/>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_LOSSLESS_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_LOSSLESS_FORMAT)"/>
           </param>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_STREAMS"/>,<xsl:value-of select="$VAR_LAKES"/>,<xsl:value-of select="$VAR_PONDS"/>,<xsl:value-of select="$VAR_BRIDGES"/>,<xsl:value-of select="$VAR_ROAD_SEGMENTS"/>,<xsl:value-of select="$VAR_DIVIDED_ROUTES"/>,<xsl:value-of select="$VAR_BUILDINGS"/>,<xsl:value-of select="$VAR_MAP_NEATLINE"/>
@@ -6121,7 +6121,7 @@ longitude</td>
           <param name="HeIgHt">200</param>
           <param name="SrS">EPSG:4326</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_LOSSLESS_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_LOSSLESS_FORMAT)"/>
           </param>
           <param name="ReQuEsT">GetMap</param>
           <example:ImageStats>
@@ -6202,7 +6202,7 @@ longitude</td>
           </url>
           <method>get</method>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_LOSSLESS_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_LOSSLESS_FORMAT)"/>
           </param>
           <param name="StYlEs"/>
           <param name="HeIgHt">7</param>
@@ -6313,7 +6313,7 @@ longitude</td>
           <param name="SrS">EPSG:4326</param>
           <param name="ReQuEsT">GetMap</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="StYlEs"/>
           <param name="VeRsIoN">
@@ -6388,7 +6388,7 @@ longitude</td>
           </url>
           <method>get</method>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="SrS">EPSG:4326</param>
           <param name="BbOx">1,-1,1,1</param>
@@ -6482,7 +6482,7 @@ longitude</td>
           </param>
           <param name="StYlEs"/>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="HeIgHt">100</param>
         </request>
@@ -6558,7 +6558,7 @@ longitude</td>
           </param>
           <param name="StYlEs"/>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="VeRsIoN">
             <xsl:value-of select="$VAR_WMS_VERSION"/>
@@ -6642,7 +6642,7 @@ longitude</td>
             <xsl:value-of select="$VAR_PONDS"/>
           </param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_LOSSLESS_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_LOSSLESS_FORMAT)"/>
           </param>
           <param name="HeIgHt">100</param>
           <param name="SrS">EPSG:4326</param>
@@ -6740,7 +6740,7 @@ longitude</td>
           </param>
           <param name="WiDtH">200</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_LOSSLESS_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_LOSSLESS_FORMAT)"/>
           </param>
           <param name="StYlEs"/>
           <parsers:ImageParser>
@@ -6832,7 +6832,7 @@ longitude</td>
           </param>
           <param name="WiDtH">200</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_LOSSLESS_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_LOSSLESS_FORMAT)"/>
           </param>
           <param name="ReQuEsT">GetMap</param>
           <param name="BbOx">0,-0.0020,0.0040,0</param>
@@ -6932,7 +6932,7 @@ longitude</td>
           <param name="HeIgHt">100</param>
           <param name="ReQuEsT">GetMap</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <parsers:HeadersParser/>
         </request>
@@ -7006,7 +7006,7 @@ longitude</td>
           </url>
           <method>get</method>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="ReQuEsT">GetMap</param>
           <param name="VeRsIoN">
@@ -7122,7 +7122,7 @@ longitude</td>
           <param name="WiDtH">100</param>
           <param name="SrS">EPSG:4326</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="HeIgHt">100</param>
           <param name="ExCePtIoNs">application/vnd.ogc.se_inimage</param>
@@ -7211,7 +7211,7 @@ longitude</td>
             <xsl:value-of select="$VAR_WMS_VERSION"/>
           </param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_LOSSLESS_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_LOSSLESS_FORMAT)"/>
           </param>
           <param name="WiDtH">100</param>
           <param name="ReQuEsT">GetMap</param>
@@ -7309,7 +7309,7 @@ longitude</td>
           <param name="TrAnSpArEnT">TRUE</param>
           <param name="LaYeRs">NonExistant</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_TRANSPARENT_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_TRANSPARENT_FORMAT)"/>
           </param>
           <param name="StYlEs"/>
           <param name="ExCePtIoNs">application/vnd.ogc.se_blank</param>
@@ -7422,7 +7422,7 @@ longitude</td>
           <method>get</method>
           <param name="WiDtH">100</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="SrS">EPSG:4326</param>
           <param name="StYlEs"/>
@@ -7869,7 +7869,7 @@ longitude</td>
           </url>
           <method>get</method>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="VeRsIoN">
             <xsl:value-of select="$VAR_WMS_VERSION"/>
@@ -7960,7 +7960,7 @@ longitude</td>
           </param>
           <param name="ReQuEsT">GetMap</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="HeIgHt">96</param>
           <param name="WiDtH">168</param>
@@ -8050,7 +8050,7 @@ longitude</td>
           <param name="StYlEs"/>
           <param name="ReQuEsT">GetMap</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <parsers:HeadersParser/>
         </request>
@@ -8174,7 +8174,7 @@ longitude</td>
           <param name="ReQuEsT">GetMap</param>
           <param name="HeIgHt">96</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="VeRsIoN">
             <xsl:value-of select="$VAR_WMS_VERSION"/>
@@ -8253,7 +8253,7 @@ longitude</td>
           <param name="ReQuEsT">GetMap</param>
           <param name="BbOx">-0.0042,-0.0024,0.0042,0.0024</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="VeRsIoN">
             <xsl:value-of select="$VAR_WMS_VERSION"/>
@@ -8332,7 +8332,7 @@ longitude</td>
           </url>
           <method>get</method>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="WiDtH">168</param>
           <param name="HeIgHt">96</param>
@@ -8417,7 +8417,7 @@ longitude</td>
           <param name="BbOx">0,-0.0020,0.0040,0</param>
           <param name="HeIgHt">100</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_LAKES"/>
@@ -8507,7 +8507,7 @@ longitude</td>
           <param name="ReQuEsT">GetMap</param>
           <param name="HeIgHt">96</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="BbOx">-0.0042,-0.0024,0.0042,0.0024</param>
           <param name="SrS">EPSG:4326</param>
@@ -8581,7 +8581,7 @@ longitude</td>
           <method>get</method>
           <param name="ReQuEsT">GetMap</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="VeRsIoN">
             <xsl:value-of select="$VAR_WMS_VERSION"/>
@@ -8664,7 +8664,7 @@ longitude</td>
           <method>get</method>
           <param name="WiDtH">168</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="VeRsIoN">
             <xsl:value-of select="$VAR_WMS_VERSION"/>
@@ -8758,7 +8758,7 @@ longitude</td>
             <xsl:value-of select="$VAR_INHERENT_STYLE"/>
           </param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_LAYER_WITH_INHERENT_STYLE"/>
@@ -8845,7 +8845,7 @@ longitude</td>
             <xsl:value-of select="$VAR_LAYER_WITH_STYLE"/>,<xsl:value-of select="$VAR_LAKES"/>
           </param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="HeIgHt">96</param>
           <param name="ReQuEsT">GetMap</param>
@@ -8929,7 +8929,7 @@ longitude</td>
           <param name="SrS">EPSG:4326</param>
           <param name="WiDtH">168</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_LAYER_WITH_INHERITED_STYLE"/>
@@ -9011,7 +9011,7 @@ longitude</td>
             <xsl:value-of select="$VAR_WMS_VERSION"/>
           </param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_LAYER_WITH_STYLE"/>,<xsl:value-of select="$VAR_LAYER_WITH_STYLE"/>
@@ -9102,7 +9102,7 @@ longitude</td>
           </param>
           <param name="ReQuEsT">GetMap</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_LAYER_WITH_STYLE"/>,<xsl:value-of select="$VAR_LAYER_WITH_STYLE"/>,<xsl:value-of select="$VAR_LAYER_WITH_STYLE"/>
@@ -9180,7 +9180,7 @@ longitude</td>
             <xsl:value-of select="$VAR_LAKES"/>
           </param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="BbOx">-0.0042,-0.0024,0.0042,0.0024</param>
           <param name="StYlEs">UndefinedStyle</param>
@@ -9266,7 +9266,7 @@ longitude</td>
           </param>
           <param name="StYlEs"/>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="HeIgHt">96</param>
           <param name="VeRsIoN">
@@ -9346,7 +9346,7 @@ longitude</td>
           </url>
           <method>get</method>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="HeIgHt">96</param>
           <param name="VeRsIoN">
@@ -9438,7 +9438,7 @@ longitude</td>
           <param name="StYlEs">,,,</param>
           <param name="WiDtH">168</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="VeRsIoN">
             <xsl:value-of select="$VAR_WMS_VERSION"/>
@@ -9520,7 +9520,7 @@ longitude</td>
           <param name="WiDtH">168</param>
           <param name="SrS">EPSG:4326</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="HeIgHt">96</param>
           <param name="LaYeRs">
@@ -9612,7 +9612,7 @@ longitude</td>
           <param name="ReQuEsT">GetMap</param>
           <param name="BbOx">0,-0.0020,0.0040,0</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_TRANSPARENT_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_TRANSPARENT_FORMAT)"/>
           </param>
           <param name="HeIgHt">100</param>
           <parsers:ImageParser>
@@ -9696,7 +9696,7 @@ longitude</td>
           <param name="ReQuEsT">GetMap</param>
           <param name="HeIgHt">100</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_TRANSPARENT_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_TRANSPARENT_FORMAT)"/>
           </param>
           <param name="BbOx">0,-0.0020,0.0040,0</param>
           <param name="StYlEs"/>
@@ -9789,7 +9789,7 @@ longitude</td>
           <method>get</method>
           <param name="TrAnSpArEnT">TRUE</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_TRANSPARENT_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_TRANSPARENT_FORMAT)"/>
           </param>
           <param name="HeIgHt">100</param>
           <param name="WiDtH">200</param>
@@ -9880,7 +9880,7 @@ longitude</td>
           <method>get</method>
           <param name="WiDtH">200</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_IMAGE_FORMAT)"/>
           </param>
           <param name="LaYeRs">
             <xsl:value-of select="$VAR_LAKES"/>
@@ -9964,7 +9964,7 @@ longitude</td>
           </url>
           <method>get</method>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_READABLE_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_READABLE_IMAGE_FORMAT)"/>
           </param>
           <param name="HeIgHt">768</param>
           <param name="VeRsIoN">
@@ -10063,7 +10063,7 @@ longitude</td>
           <param name="WiDtH">16</param>
           <param name="ReQuEsT">GetMap</param>
           <param name="FoRmAt">
-            <xsl:value-of select="$VAR_READABLE_IMAGE_FORMAT"/>
+            <xsl:value-of select="functions:encode($VAR_READABLE_IMAGE_FORMAT)"/>
           </param>
           <param name="VeRsIoN">
             <xsl:value-of select="$VAR_WMS_VERSION"/>
