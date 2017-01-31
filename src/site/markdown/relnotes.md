@@ -1,5 +1,8 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.15 (2017-01-31)
+   * [#50](https://github.com/opengeospatial/ets-wms11/issues/50) - missing urlencoding
+
 ## 1.14 (2016-04-29)
    * [#47](https://github.com/opengeospatial/ets-wms11/issues/47) - value of INFO_FORMAT parameter not URL-encoded
 
