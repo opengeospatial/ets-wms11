@@ -13,7 +13,11 @@
          xmlns:wms="http://www.opengis.net/wms"
          xmlns:xlink="http://www.w3.org/1999/xlink"
          xmlns:xs="http://www.w3.org/2001/XMLSchema"
-         xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:etswms="http://www.occamlab.com/etswms/1.1" >
+
+  <xi:include href="functions.xml"/>
 
   <parser name="wms:CustomTransformer">
     <java class="com.occamlab.te.parsers.CustomTransformer" method="parse"/>
@@ -10160,20 +10164,20 @@ longitude</td>
           </ctl:url>
           <ctl:method>get</ctl:method>
           <ctl:param name="LaYeRs">
-            <xsl:value-of select="functions:encode($layer-info/LayerInfo/@name)"/>
+            <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@name)"/>
           </ctl:param>
           <ctl:param name="ReQuEsT">GetFeatureInfo</ctl:param>
           <ctl:param name="BbOx">
-            <xsl:value-of select="$layer-info/LayerInfo/@bbox"/>
+            <xsl:value-of select="$layer-info/etswms:LayerInfo/@bbox"/>
           </ctl:param>
           <ctl:param name="WiDtH">
-            <xsl:value-of select="$layer-info/LayerInfo/@width"/>
+            <xsl:value-of select="$layer-info/etswms:LayerInfo/@width"/>
           </ctl:param>
           <ctl:param name="SrS">
-            <xsl:value-of select="functions:encode($layer-info/LayerInfo/@srs)"/>
+            <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@srs)"/>
           </ctl:param>
           <ctl:param name="QuErY_LaYeRs">
-            <xsl:value-of select="functions:encode($layer-info/LayerInfo/@name)"/>
+            <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@name)"/>
           </ctl:param>
           <ctl:param name="VeRsIoN">
             <xsl:value-of select="functions:version()"/>
@@ -10182,7 +10186,7 @@ longitude</td>
           <ctl:param name="X">60</ctl:param>
           <ctl:param name="Y">60</ctl:param>
           <ctl:param name="HeIgHt">
-            <xsl:value-of select="$layer-info/LayerInfo/@height"/>
+            <xsl:value-of select="$layer-info/etswms:LayerInfo/@height"/>
           </ctl:param>
           <ctl:param name="InFo_fOrMaT">
             <xsl:value-of select="functions:encode($FORMAT)"/>
@@ -10237,16 +10241,16 @@ longitude</td>
                 <xsl:value-of select="functions:encode($style)"/>
               </ctl:param>
               <ctl:param name="BbOx">
-                <xsl:value-of select="$layer-info/LayerInfo/@bbox"/>
+                <xsl:value-of select="$layer-info/etswms:LayerInfo/@bbox"/>
               </ctl:param>
               <ctl:param name="SrS">
-                <xsl:value-of select="functions:encode($layer-info/LayerInfo/@srs)"/>
+                <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@srs)"/>
               </ctl:param>
               <ctl:param name="LaYeRs">
-                <xsl:value-of select="functions:encode($layer-info/LayerInfo/@name)"/>
+                <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@name)"/>
               </ctl:param>
               <ctl:param name="WiDtH">
-                <xsl:value-of select="$layer-info/LayerInfo/@width"/>
+                <xsl:value-of select="$layer-info/etswms:LayerInfo/@width"/>
               </ctl:param>
               <ctl:param name="VeRsIoN">
                 <xsl:value-of select="functions:version()"/>
@@ -10255,7 +10259,7 @@ longitude</td>
                 <xsl:value-of select="functions:encode($image-format)"/>
               </ctl:param>
               <ctl:param name="HeIgHt">
-                <xsl:value-of select="$layer-info/LayerInfo/@height"/>
+                <xsl:value-of select="$layer-info/etswms:LayerInfo/@height"/>
               </ctl:param>
               <ctl:param name="ReQuEsT">GetMap</ctl:param>
               <parsers:HTTPParser>
@@ -10300,13 +10304,13 @@ longitude</td>
           </ctl:url>
           <ctl:method>get</ctl:method>
           <ctl:param name="LaYeRs">
-            <xsl:value-of select="functions:encode($layer-info/LayerInfo/@name)"/>
+            <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@name)"/>
           </ctl:param>
           <ctl:param name="SrS">
-            <xsl:value-of select="functions:encode($layer-info/LayerInfo/@srs)"/>
+            <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@srs)"/>
           </ctl:param>
           <ctl:param name="BbOx">
-            <xsl:value-of select="$layer-info/LayerInfo/@bbox"/>
+            <xsl:value-of select="$layer-info/etswms:LayerInfo/@bbox"/>
           </ctl:param>
           <ctl:param name="WiDtH">100</ctl:param>
           <ctl:param name="ReQuEsT">GetMap</ctl:param>
@@ -10362,22 +10366,22 @@ longitude</td>
               </ctl:url>
               <ctl:method>get</ctl:method>
               <ctl:param name="LaYeRs">
-                <xsl:value-of select="functions:encode($layer-info/LayerInfo/@name)"/>
+                <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@name)"/>
               </ctl:param>
               <ctl:param name="BbOx">
-                <xsl:value-of select="$layer-info/LayerInfo/@bbox"/>
+                <xsl:value-of select="$layer-info/etswms:LayerInfo/@bbox"/>
               </ctl:param>
               <ctl:param name="SrS">
-                <xsl:value-of select="functions:encode($layer-info/LayerInfo/@srs)"/>
+                <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@srs)"/>
               </ctl:param>
               <ctl:param name="WiDtH">
-                <xsl:value-of select="$layer-info/LayerInfo/@width"/>
+                <xsl:value-of select="$layer-info/etswms:LayerInfo/@width"/>
               </ctl:param>
               <ctl:param name="FoRmAt">
                 <xsl:value-of select="functions:encode($image-format)"/>
               </ctl:param>
               <ctl:param name="HeIgHt">
-                <xsl:value-of select="$layer-info/LayerInfo/@height"/>
+                <xsl:value-of select="$layer-info/etswms:LayerInfo/@height"/>
               </ctl:param>
               <ctl:param name="VeRsIoN">
                 <xsl:value-of select="functions:version()"/>
@@ -10423,10 +10427,10 @@ longitude</td>
           </ctl:url>
           <ctl:method>get</ctl:method>
           <ctl:param name="HeIgHt">
-            <xsl:value-of select="$layer-info/LayerInfo/@height"/>
+            <xsl:value-of select="$layer-info/etswms:LayerInfo/@height"/>
           </ctl:param>
           <ctl:param name="LaYeRs">
-            <xsl:value-of select="functions:encode($layer-info/LayerInfo/@name)"/>
+            <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@name)"/>
           </ctl:param>
           <ctl:param name="FoRmAt">
             <xsl:value-of select="functions:encode($format)"/>
@@ -10434,16 +10438,16 @@ longitude</td>
           <ctl:param name="ReQuEsT">GetMap</ctl:param>
           <ctl:param name="StYlEs"/>
           <ctl:param name="SrS">
-            <xsl:value-of select="functions:encode($layer-info/LayerInfo/@srs)"/>
+            <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@srs)"/>
           </ctl:param>
           <ctl:param name="BbOx">
-            <xsl:value-of select="$layer-info/LayerInfo/@bbox"/>
+            <xsl:value-of select="$layer-info/etswms:LayerInfo/@bbox"/>
           </ctl:param>
           <ctl:param name="VeRsIoN">
             <xsl:value-of select="functions:version()"/>
           </ctl:param>
           <ctl:param name="WiDtH">
-            <xsl:value-of select="$layer-info/LayerInfo/@width"/>
+            <xsl:value-of select="$layer-info/etswms:LayerInfo/@width"/>
           </ctl:param>
           <parsers:HTTPParser>
             <parsers:parse>
@@ -10482,10 +10486,10 @@ longitude</td>
           </ctl:url>
           <ctl:method>get</ctl:method>
           <ctl:param name="HeIgHt">
-            <xsl:value-of select="$layer-info/LayerInfo/@height"/>
+            <xsl:value-of select="$layer-info/etswms:LayerInfo/@height"/>
           </ctl:param>
           <ctl:param name="LaYeRs">
-            <xsl:value-of select="functions:encode($layer-info/LayerInfo/@name)"/>
+            <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@name)"/>
           </ctl:param>
           <ctl:param name="FoRmAt">
             <xsl:value-of select="functions:encode($format)"/>
@@ -10493,16 +10497,16 @@ longitude</td>
           <ctl:param name="ReQuEsT">GetMap</ctl:param>
           <ctl:param name="StYlEs"/>
           <ctl:param name="SrS">
-            <xsl:value-of select="functions:encode($layer-info/LayerInfo/@srs)"/>
+            <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@srs)"/>
           </ctl:param>
           <ctl:param name="BbOx">
-            <xsl:value-of select="$layer-info/LayerInfo/@bbox"/>
+            <xsl:value-of select="$layer-info/etswms:LayerInfo/@bbox"/>
           </ctl:param>
           <ctl:param name="VeRsIoN">
             <xsl:value-of select="functions:version()"/>
           </ctl:param>
           <ctl:param name="WiDtH">
-            <xsl:value-of select="$layer-info/LayerInfo/@width"/>
+            <xsl:value-of select="$layer-info/etswms:LayerInfo/@width"/>
           </ctl:param>
           <ctl:param name="TrAnSpaReNt">
             <xsl:value-of select="TRUE"/>
@@ -10544,13 +10548,13 @@ longitude</td>
           </ctl:url>
           <ctl:method>get</ctl:method>
           <ctl:param name="LAYERS">
-            <xsl:value-of select="encode-for-uri($layer-info/LayerInfo/@name)"/>
+            <xsl:value-of select="encode-for-uri($layer-info/etswms:LayerInfo/@name)"/>
           </ctl:param>
           <ctl:param name="SRS">
-            <xsl:value-of select="encode-for-uri($layer-info/LayerInfo/@srs)"/>
+            <xsl:value-of select="encode-for-uri($layer-info/etswms:LayerInfo/@srs)"/>
           </ctl:param>
           <ctl:param name="BbOx">
-            <xsl:value-of select="$layer-info/LayerInfo/@bbox"/>
+            <xsl:value-of select="$layer-info/etswms:LayerInfo/@bbox"/>
           </ctl:param>
           <ctl:param name="WiDtH">100</ctl:param>
           <ctl:param name="request">GetMap</ctl:param>
@@ -10599,11 +10603,11 @@ longitude</td>
           </ctl:url>
           <ctl:method>get</ctl:method>
           <ctl:param name="LaYeRs">
-            <xsl:value-of select="functions:encode($layer-info/LayerInfo/@name)"/>
+            <xsl:value-of select="functions:encode($layer-info/etswms:LayerInfo/@name)"/>
           </ctl:param>
           <ctl:param name="SrS">NONE</ctl:param>
           <ctl:param name="BbOx">
-            <xsl:value-of select="$layer-info/LayerInfo/@bbox"/>
+            <xsl:value-of select="$layer-info/etswms:LayerInfo/@bbox"/>
           </ctl:param>
           <ctl:param name="WiDtH">100</ctl:param>
           <ctl:param name="ReQuEsT">GetMap</ctl:param>
