@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>WMS 1.1 Conformance Test Suite</title>
+    <meta charset="UTF-8" />
+    <style type="text/css">
+body {
+  color: black;
+  background: white;
+  font-family: Georgia, serif;
+}
+h1, h2, h3 {
+  font-family: Verdana, sans-serif;
+  color: #000099;
+  text-align: left;
+}
+h1 {
+  font-size: 1.4em;
+  margin-top: 2em;
+}
+h2 {
+  font-size: 1.2em;
+}
+h3 {
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+table {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.25em;
+  border: 1px solid black;
+}
+caption, figcaption {
+  font-weight: bold;
+  text-align: left;
+  margin: 0.25em;
+}
+th {
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
+  text-align: left;
+  vertical-align: top;
+  background: #eeeeee;
+  color: #000099;
+}
+dt {
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+    </style>
+  </head>
+  <body>
+    <h1>WMS 1.1 Conformance Test Suite</h1>
+    <p>Verifies that a Web Map Service (WMS) implementation comnforms to the relevant specifications:</p>
+    <ul>
+      <li>OpenGIS Web Map Server Implementation Specification, Version 1.1.1 [<a target="_blank"
+                                                                                 href="http://portal.opengeospatial.org/files/?artifact_id=1081&version=1&format=pdf">OGC 01-068r3</a>]</li>
+    </ul>
+
+    <p>The test run arguments are summarized in the following table. The <em>Obligation</em>
+      descriptor can have the following values: M (mandatory), O (optional), or C
+      (conditional).</p>
+
+    <table id="input-arguments" border="1" style="border-collapse: collapse;">
+      <caption>Test run arguments</caption>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Value domain</th>
+        <th>Obligation</th>
+        <th>Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr id="capabilities-url">
+        <td>capabilities-url</td>
+        <td>URI</td>
+        <td>M</td>
+        <td>An absolute URI that refers to an XML representation of the service capabilities document.
+          This document does not need to be obtained from the service under test (SUT), but it must
+          describe the implementation under test (IUT). Ampersand ('&amp;') characters appearing within
+          a query parameter value must be percent-encoded as %26.</td>
+      </tr>
+      <tr id="updatesequence">
+        <td>updatesequence</td>
+        <td>Enumeration: "manual" | "auto" (default)</td>
+        <td>O</td>
+        <td>The WMS spec allows servers to use an UpdateSequence value for maintaining cache consistency. If the server advertises an UpdateSequence value and the Automatic option is selected below, the test suite will attempt to test the UpdateSequence behavior automatically. However, the lexical ordering of UpdateSequence values is determined by the server, so the tests may not always be correct. If you suspect a problem, select the Manual option and enter the updateSequence values requested below.
+          <ul>
+            <li><b>manual</b> - The updateSequence tests will use the values supplied below </li>
+            <li><b>auto</b> - The updateSequence tests will use automatically generated updateSequence values</li>
+          </ul>
+        </td>
+      </tr>
+      <tr id="low-updatesequence">
+        <td>low-updatesequence</td>
+        <td>String</td>
+        <td>C (required if updatesequence="manual") </td>
+        <td>A version that is lower than the current updateSequence value.</td>
+      </tr>
+      <tr id="high-updatesequence">
+        <td>high-updatesequence</td>
+        <td>String</td>
+        <td>C (required if updatesequence="manual")</td>
+        <td>A version that is higher than the current updateSequence value.</td>
+      </tr>
+      <tr id="profile">
+        <td>profile</td>
+        <td>Enumeration: "no" | "basic" | "queryable" (default) </td>
+        <td>O</td>
+        <td>Certification is available for servers that implement either the BASIC profile or the QUERYABLE profile. In order to be certified, the server must implement the requirements for the profile. Select which profile you want to test below.
+          <ul>
+            <li><b>no</b> - Do not certify that the server meets requirements for any test profile</li>
+            <li><b>basic</b> - Certify that the server meets all requirements for the BASIC profile</li>
+            <li><b>queryable</b> - Certify that the server meets all requirements for the QUERYABLE profile</li>
+          </ul>
+        </td>
+      </tr>
+      <tr id="recommended">
+        <td>recommended</td>
+        <td>Boolean (default: false)</td>
+        <td>O</td>
+        <td>Verify that the server supports fuctionality which is recommended in the spec, but not required.</td>
+      </tr>
+      <tr id="getfeatureinfo">
+        <td>getfeatureinfo</td>
+        <td>Boolean (default: false)</td>
+        <td>O</td>
+        <td>Verify that the server supports the application/vnd.ogc.gml GetFeatureInfo format. This test will pass only if the GML instance document returned contains a schemaLocation attribute to reference its schema, and validates correctly.</td>
+      </tr>
+      <tr id="feesconstraints">
+        <td>feesconstraints</td>
+        <td>Boolean (default: false)</td>
+        <td>O</td>
+        <td>Verify that the server advertises that it does not require any fees or access constraints.</td>
+      </tr>
+      <tr id="bboxconstraints">
+        <td>bboxconstraints</td>
+        <td>Enumeration: "loose" | "strict" | "either" (default) </td>
+        <td>O</td>
+        <td>
+          <ul>
+            <li><b>LOOSE</b> - Verify that the server returns map data from the western hemisphere for area beyond 180 degrees east longitude</li>
+            <li><b>STRICT</b> - Verify that the server does not return map data from the western hemisphere for area beyond 180 degrees east longitude</li>
+            <li><b>EITHER</b> - Do not test area beyond 180 degrees east longitude </li>
+          </ul>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </body>
+</html>

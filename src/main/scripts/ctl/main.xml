@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.occamlab.com/ctl"
+         xmlns:ctl="http://www.occamlab.com/ctl"
+         xmlns:wms="http://www.opengis.net/wms"
+         xmlns:xi="http://www.w3.org/2001/XInclude"  >
+
+  <xi:include href="wms.xml"/>
+
+  <ctl:suite name="wms:main">
+    <title>Web Map Service (WMS) 1.1.1 Test Suite</title>
+    <description>Validates that a WMS 1.1.1 is compliant with the spec.</description>
+    <ctl:link>data/data-wms-1.1.1.zip</ctl:link>
+    <starting-test>wms:wms_main</starting-test>
+    <ctl:form xmlns="">
+      <body>
+        <h3>Web Map Service</h3>
+        <p>The Web Map Service test scripts are designed to test WMS
+          implementations based on the WMS 1.1.1 specification.</p>
+        <p>Detailed information about the test suite is available <a href="index.html" target="otherwindow">here</a>.</p>
+        <p>The number of tests
+          actually executed will depend on the capabilities advertised in the
+          capabilities URL supplied below as well as the other options
+          selected below.</p>
+        <p>Many of the tests require implementation of the standard dataset.
+          Implementation of the dataset is required for certification.</p>
+        <h4>Capabilities Setup</h4>
+        <p>Enter a capabilities document URL below. This may be the URL to
+          a static capabilities document, or a GetCapabilities request from a
+          WMS. A typical GetCapabilities request will take this form:</p>
+        <pre>
+          http://hostname/path?SERVICE=WMS&amp;REQUEST=GetCapabilities&amp;VERSION=1.1.1
+        </pre>
+        <blockquote>
+          <table border="3" padding="3">
+            <tr>
+              <td align="center">
+                <input name="VAR_WMS_CAPABILITIES_URL" size="100" type="text" value=""/>
+              </td>
+              <td align="left">Capabilities URL</td>
+            </tr>
+          </table>
+        </blockquote>
+        <h4>UpdateSequence Values</h4>
+        <p>The WMS spec allows servers to use an UpdateSequence value for
+          maintaining cache consistency as described <a href="http://cite.opengeospatial.org/OGCTestData/wms/1.1.1/spec/wms1.1.1.html#wmsops.getcapabilities.params.updatesequence"
+                                                        target="otherwindow">
+            here</a>. If the server advertises an UpdateSequence value and the
+          Automatic option is selected below, the test suite will attempt to
+          test the UpdateSequence behavior automatically. However, the
+          lexical ordering of UpdateSequence values is determined by the
+          server, so the tests may not always be correct. If you suspect a
+          problem, select the Manual option and enter the updateSequence
+          values requested below.</p>
+        <blockquote>
+          <table border="3" padding="3">
+            <tr>
+              <td align="center">
+                <input checked="checked" name="updatesequence" type="radio" value="auto_updatesequence"/>
+              </td>
+              <td align="left">Automatic - The updateSequence tests will use
+                automatically generated updateSequence values</td>
+            </tr>
+            <tr>
+              <td align="center">
+                <input name="updatesequence" type="radio" value="manual_updatesequence"/>
+              </td>
+              <td align="left">Manual - The updateSequence tests will use the
+                values supplied below</td>
+            </tr>
+          </table>
+        </blockquote>
+        <p>(Fill in these boxes only if the Manual option is selected
+          above)</p>
+        <blockquote>
+          <table border="3" padding="3">
+            <tr>
+              <td align="center">
+                <input name="VAR_HIGH_UPDATESEQUENCE" size="25" type="text" value=""/>
+              </td>
+              <td align="left">A value that is lexically higher than the current
+                updateSequence value</td>
+            </tr>
+            <tr>
+              <td align="center">
+                <input name="VAR_LOW_UPDATESEQUENCE" size="25" type="text" value=""/>
+              </td>
+              <td align="left">A value that is lexically lower than the current
+                updateSequence value</td>
+            </tr>
+          </table>
+        </blockquote>
+        <h4>Certification Profile</h4>
+        <p>Certification is available for servers that implement either the
+          BASIC profile or the QUERYABLE profile. In order to be certified,
+          the server must implement the requirements for the profile as
+          described <a href="/tsOGC/ViewTestSpec?SPEC=Web_Map_Server.html&amp;TYPE=AVAILABLE&amp;sesstype=OGC#A.-Certification%20Requirements"
+                       target="otherwindow">
+            here</a>. Select which profile you want to test below.</p>
+        <blockquote>
+          <table border="3" padding="3">
+            <tr>
+              <td align="center">
+                <input name="CERT_PROFILE" type="radio" value="no_profile"/>
+              </td>
+              <td align="left">NONE - Do not certify that the server meets
+                requirements for any test profile</td>
+            </tr>
+            <tr>
+              <td align="center">
+                <input name="CERT_PROFILE" type="radio" value="basic_profile"/>
+              </td>
+              <td align="left">BASIC - Certify that the server meets all
+                requirements for the BASIC profile</td>
+            </tr>
+            <tr>
+              <td align="center">
+                <input checked="checked" name="CERT_PROFILE" type="radio" value="queryable_profile"/>
+              </td>
+              <td align="left">QUERYABLE - Certify that the server meets all
+                requirements for the QUERYABLE profile</td>
+            </tr>
+          </table>
+        </blockquote>
+        <h4>Optional Tests</h4>
+        <p>The remaining tests are not required for certification, but may
+          prove informative or be useful as a debugging aid.</p>
+        <p>Recommendation Support</p>
+        <blockquote>
+          <table border="3" padding="3">
+            <tr>
+              <td align="center">
+                <input name="recommended" type="checkbox" value="recommended"/>
+              </td>
+              <td align="left">Verify that the server supports fuctionality which
+                is recommended in the spec, but not required</td>
+            </tr>
+          </table>
+        </blockquote>
+        <p>GML FeatureInfo</p>
+        <blockquote>
+          <table border="3" padding="3">
+            <tr>
+              <td align="center">
+                <input name="testgml" type="checkbox" value="testgml"/>
+              </td>
+              <td align="left">Verify that the server supports the
+                application/vnd.ogc.gml GetFeatureInfo format. This test will pass
+                only if the GML instance document returned contains a
+                schemaLocation attribute to reference its schema, and validates
+                correctly.</td>
+            </tr>
+          </table>
+        </blockquote>
+        <p>Fees and Access Constraints</p>
+        <blockquote>
+          <table border="3" padding="3">
+            <tr>
+              <td align="center">
+                <input name="free" type="checkbox" value="free"/>
+              </td>
+              <td align="left">Verify that the server advertises that it does not
+                require any fees or access constraints</td>
+            </tr>
+          </table>
+        </blockquote>
+        <p>BoundingBox Constraints</p>
+        <blockquote>
+          <table border="3" padding="3">
+            <tr>
+              <td align="center">
+                <input name="B_BOX_CONSTRAINT" type="radio" value="loosebboxconstraints"/>
+              </td>
+              <td align="left">LOOSE - Verify that the server returns map data
+                from the western hemisphere for area beyond 180 degrees east
+                longitude</td>
+            </tr>
+            <tr>
+              <td align="center">
+                <input name="B_BOX_CONSTRAINT" type="radio" value="strictbboxconstraints"/>
+              </td>
+              <td align="left">STRICT - Verify that the server does not return
+                map data from the western hemisphere for area beyond 180 degrees
+                east longitude</td>
+            </tr>
+            <tr>
+              <td align="center">
+                <input checked="checked" name="B_BOX_CONSTRAINT" type="radio" value="eitherbboxconstraint"/>
+              </td>
+              <td align="left">EITHER - Do not test area beyond 180 degrees east
+                longitude</td>
+            </tr>
+          </table>
+        </blockquote>
+        <p></p>
+        <input name="is-interactive-enabled" type="hidden" value="true" />
+        <input type="submit" value="OK"/>
+      </body>
+    </ctl:form>
+
+  </ctl:suite>
+
+</package>

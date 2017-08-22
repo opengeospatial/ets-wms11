@@ -4,7 +4,8 @@
  		xmlns:ctl="http://www.occamlab.com/ctl"
  		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
  		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
- 		xmlns:xlink="http://www.w3.org/1999/xlink" >
+ 		xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:etswms="http://www.occamlab.com/etswms/1.1" >
 
    <ctl:function name="functions:append-kvp">
       <ctl:param name="url-prefix"/>
@@ -58,7 +59,7 @@
          <xsl:variable name="major" select="substring-before($version-string, '.')"/>
          <xsl:variable name="minor" select="substring-before(substring-after($version-string, '.'), '.')"/>
          <xsl:variable name="rev" select="substring-after(substring-after($version-string, '.'), '.')"/>
-         <xsl-value-of select="$major * 10000 + $minor * 100 + $rev"/>
+         <xsl:value-of select="number($major) * 10000 + number($minor) * 100 + number($rev)"/>
       </ctl:code>
    </ctl:function>
 
@@ -124,7 +125,7 @@
             </xsl:choose>
          </xsl:variable>
 
-         <LayerInfo>
+         <etswms:LayerInfo>
             <xsl:attribute name="name">
                <xsl:value-of select="$layer-name"/>
             </xsl:attribute>
@@ -150,7 +151,7 @@
                   </xsl:choose>
                </xsl:for-each>
             </xsl:attribute>
-         </LayerInfo>
+         </etswms:LayerInfo>
       </ctl:code>
    </ctl:function>
 
@@ -184,7 +185,7 @@
       <ctl:description>Splits a string into tokens.</ctl:description>
       <ctl:code>
          <xsl:if test="$s != ''">
-            <token><xsl:value-of select="substring-before(concat($s, $match), $match)"/></token>
+            <etswms:token><xsl:value-of select="substring-before(concat($s, $match), $match)"/></etswms:token>
             <xsl:if test="contains($s, $match)">
                <xsl:copy-of select="functions:split(substring-after($s, $match), $match)"/>
             </xsl:if>
@@ -239,7 +240,7 @@ MIME parameters don't have to match anymore - see issue 24, MIME type test too s
 -->
                </xsl:when>
                <xsl:otherwise>
-                  <fail/>
+                  <ctl:fail/>
                </xsl:otherwise>
             </xsl:choose>
          </xsl:variable>
