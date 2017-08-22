@@ -10153,7 +10153,7 @@
     <ctl:link>http://cite.geoenterpriselab.com/OGCTestData/wms/1.1.1/spec/wms1_1_1.html#wmsops.getmap.params.crs</ctl:link>
     <ctl:code>
       <xsl:variable name="image-format" select="$WMS_CAPABILITIES/Capability/Request/GetMap/Format[1]"/>
-      <xsl:variable name="layer" select="string($WMS_CAPABILITIES/Capability//Layer[Name and ancestor-or-self::Layer/SRS=$srs][1]/Name)"/>
+      <xsl:variable name="layer" select="string(($WMS_CAPABILITIES/Capability//Layer[Name and ancestor-or-self::Layer/SRS=$srs])[1]/Name)"/>
       <xsl:variable name="layer-info">
         <ctl:call-function name="functions:layer-info">
           <ctl:with-param name="root-layer" select="$WMS_CAPABILITIES/Capability/Layer"/>
