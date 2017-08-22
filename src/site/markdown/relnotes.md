@@ -1,5 +1,9 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.16 (2017-08-22)
+   * [#52](https://github.com/opengeospatial/ets-wms11/issues/52) - No Rest API
+   * [#54](https://github.com/opengeospatial/ets-wms11/issues/54) - Problem with WMS 1.1.1 validation (wms:wmsops-getmap-each-srs fails due to XSLT failure)
+
 ## 1.15 (2017-01-31)
    * [#50](https://github.com/opengeospatial/ets-wms11/issues/50) - missing urlencoding
 
