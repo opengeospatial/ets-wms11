@@ -1441,7 +1441,7 @@
       </call-test>
       <ctl:for-each select="$VAR_WMS_CAPABILITIES//Capability/Request/GetFeatureInfo/Format">
         <ctl:call-test name="wms:wmsops-getfeatureinfo-each-info_format">
-          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES" />
           <ctl:with-param name="FORMAT" select="." label="each GetFeatureInfo format"
                           label-expr="concat('format &quot;', ., '&quot;')" />
         </ctl:call-test>
