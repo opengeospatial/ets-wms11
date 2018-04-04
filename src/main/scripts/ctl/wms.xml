@@ -1270,7 +1270,7 @@
 
       <ctl:for-each select="$VAR_WMS_CAPABILITIES//Layer/Style[not(Name=../ancestor::Layer/Style/Name)]">
         <ctl:call-test name="wms:wmsops-getmap-each-style">
-          <ctl:with-param name="capabilities" select="$VAR_WMS_CAPABILITIES/*" />
+          <ctl:with-param name="capabilities" select="$VAR_WMS_CAPABILITIES" />
           <ctl:with-param name="style" select="./Name" label="each style"
                           label-expr="concat('style &quot;', ./Name, '&quot;')" />
           <ctl:with-param name="layer" select="../Name" />
@@ -1279,7 +1279,7 @@
 
       <ctl:for-each select="$VAR_WMS_CAPABILITIES//Layer/Name">
         <ctl:call-test name="wms:wmsops-getmap-each-layer">
-          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES" />
           <ctl:with-param name="layer" select="string(.)" label="each named layer"
                           label-expr="concat('layer &quot;', ., '&quot;')" />
         </ctl:call-test>
@@ -1288,14 +1288,14 @@
       <ctl:for-each
               select="$VAR_WMS_CAPABILITIES//Layer//SRS[not(. = ../preceding::Layer/SRS) and not(. = ../ancestor::Layer/SRS) and not(starts-with(., 'AUTO'))]">
         <ctl:call-test name="wms:wmsops-getmap-each-srs">
-          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES" />
           <ctl:with-param name="srs" select="." label="each SRS" label-expr="concat('SRS &quot;', ., '&quot;')" />
         </ctl:call-test>
       </ctl:for-each>
 
       <ctl:for-each select="$VAR_WMS_CAPABILITIES/Request/GetMap/Format">
         <ctl:call-test name="wms:wmsops-getmap-each-format">
-          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES" />
           <ctl:with-param name="format" select="." label="each GetMap format"
                           label-expr="concat('format &quot;', ., '&quot;')" />
         </ctl:call-test>
@@ -1303,18 +1303,18 @@
 
       <ctl:for-each select="$VAR_WMS_CAPABILITIES/Request/GetMap/Format">
         <ctl:call-test name="wms:wmsops-getmap-each-format-transparent">
-          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES" />
           <ctl:with-param name="format" select="." label="each GetMap format"
                           label-expr="concat('format &quot;', ., '&quot;')" />
         </ctl:call-test>
       </ctl:for-each>
 
       <call-test name="wms:wmsops-getmap-layer-encoded-name">
-        <with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+        <with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES" />
       </call-test>
 
       <call-test name="wms:basic_elements-validate-exception">
-        <with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+        <with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES" />
       </call-test>
     </code>
   </test>
