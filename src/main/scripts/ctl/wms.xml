@@ -476,9 +476,8 @@
           <with-param name="se_blank" select="$se_blank" />
           <with-param name="se_inimage" select="$se_inimage" />
           <with-param name="stddata" select="$stddata" />
-          <with-param name="stddata " select="$stddata " />
           <with-param name="transparency" select="$transparency" />
-          <with-param name="unqueryablelayer  " select="$unqueryablelayer  " />
+          <with-param name="unqueryablelayer" select="$unqueryablelayer" />
           <with-param name="updatesequence" select="$updatesequence" />
           <with-param name="hosturl" select="$hosturl" />
           <with-param name="VAR_AUTO_HIGH_UPDATESEQUENCE" select="$VAR_AUTO_HIGH_UPDATESEQUENCE" />
@@ -511,7 +510,9 @@
           <with-param name="VAR_STYLE" select="$VAR_STYLE" />
           <with-param name="VAR_TRANSPARENT_FORMAT" select="$VAR_TRANSPARENT_FORMAT" />
           <with-param name="VAR_UNQUERYABLE_LAYER" select="$VAR_UNQUERYABLE_LAYER" />
+          <with-param name="VAR_WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES" />
           <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+          <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
           <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
           <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
         </call-test>
@@ -614,9 +615,8 @@
     <param name="se_blank" />
     <param name="se_inimage" />
     <param name="stddata" />
-    <param name="stddata " />
     <param name="transparency" />
-    <param name="unqueryablelayer  " />
+    <param name="unqueryablelayer" />
     <param name="updatesequence" />
     <param name="hosturl" />
     <param name="VAR_AUTO_HIGH_UPDATESEQUENCE" />
@@ -649,7 +649,9 @@
     <param name="VAR_STYLE" />
     <param name="VAR_TRANSPARENT_FORMAT" />
     <param name="VAR_UNQUERYABLE_LAYER" />
+    <param name="VAR_WMS_CAPABILITIES" />
     <param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+    <param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
     <param name="VAR_WMS_GET_MAP_HTTP_GET_URL" />
     <param name="VAR_WMS_VERSION" />
     <assertion>This WMS is valid against 'no' profile</assertion>
