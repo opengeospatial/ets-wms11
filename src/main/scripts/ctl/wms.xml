@@ -443,898 +443,1143 @@
                <xsl:value-of select="concat('hosturl: ', $hosturl)"/>
             </message>
 -->
-        <xsl:if test="$stddata and $readable and $is-interactive-enabled = 'true'">
-          <call-test name="wms:wmsops-getmap-params-bbox-1">
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_BASIC_POLYGONS" select="$VAR_BASIC_POLYGONS"/>
-            <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata and $readable and $is-interactive-enabled = 'true'">
-          <call-test name="wms:wmsops-getmap-params-bbox-2">
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_STREAMS" select="$VAR_STREAMS"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_PONDS" select="$VAR_PONDS"/>
-            <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES"/>
-            <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS"/>
-            <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES"/>
-            <with-param name="VAR_BUILDINGS" select="$VAR_BUILDINGS"/>
-            <with-param name="VAR_MAP_NEATLINE" select="$VAR_MAP_NEATLINE"/>
-            <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT"/>
-            <with-param name="hosturl" select="$hosturl"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$se_inimage and $readable and $is-interactive-enabled = 'true'">
-          <call-test name="wms:wmsops-getmap-params-exceptions-3">
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata and $readable and $is-interactive-enabled = 'true'">
-          <call-test name="wms:wmsops-getmap-params-layers-4">
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_FORESTS" select="$VAR_FORESTS"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES"/>
-            <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT"/>
-            <with-param name="hosturl" select="$hosturl"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata and $readable and $is-interactive-enabled = 'true'">
-          <call-test name="wms:wmsops-getmap-params-width_height-3">
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_STREAMS" select="$VAR_STREAMS"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_PONDS" select="$VAR_PONDS"/>
-            <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES"/>
-            <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS"/>
-            <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES"/>
-            <with-param name="VAR_BUILDINGS" select="$VAR_BUILDINGS"/>
-            <with-param name="VAR_MAP_NEATLINE" select="$VAR_MAP_NEATLINE"/>
-            <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT"/>
-          </call-test>
-        </xsl:if>
-        <call-test name="wms:basic_elements-param_rules-order_and_case-3">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
+
+        <call-test name="wms:wms-no-profile">
+          <with-param name="auto_updatesequence" select="$auto_updatesequence" />
+          <with-param name="getfeatureinfo" select="$getfeatureinfo" />
+          <with-param name="gif" select="$gif" />
+          <with-param name="inherentsrs" select="$inherentsrs" />
+          <with-param name="inherentstyle" select="$inherentstyle" />
+          <with-param name="inheritedsrs" select="$inheritedsrs" />
+          <with-param name="inheritedstyle" select="$inheritedstyle" />
+          <with-param name="is-interactive-enabled" select="$is-interactive-enabled" />
+          <with-param name="jpeg" select="$jpeg" />
+          <with-param name="lossless" select="$lossless" />
+          <with-param name="manual_updatesequence" select="$manual_updatesequence" />
+          <with-param name="namedstyle" select="$namedstyle" />
+          <with-param name="png" select="$png" />
+          <with-param name="queryable" select="$queryable" />
+          <with-param name="readable" select="$readable" />
+          <with-param name="se_blank" select="$se_blank" />
+          <with-param name="se_inimage" select="$se_inimage" />
+          <with-param name="stddata" select="$stddata" />
+          <with-param name="stddata " select="$stddata " />
+          <with-param name="transparency" select="$transparency" />
+          <with-param name="unqueryablelayer  " select="$unqueryablelayer  " />
+          <with-param name="updatesequence" select="$updatesequence" />
+          <with-param name="hosturl" select="$hosturl" />
+          <with-param name="VAR_AUTO_HIGH_UPDATESEQUENCE" select="$VAR_AUTO_HIGH_UPDATESEQUENCE" />
+          <with-param name="VAR_AUTO_LOW_UPDATESEQUENCE" select="$VAR_AUTO_LOW_UPDATESEQUENCE" />
+          <with-param name="VAR_BASIC_POLYGONS" select="$VAR_BASIC_POLYGONS" />
+          <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES" />
+          <with-param name="VAR_BUILDINGS" select="$VAR_BUILDINGS" />
+          <with-param name="VAR_CURRENT_UPDATESEQUENCE" select="$VAR_CURRENT_UPDATESEQUENCE" />
+          <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES" />
+          <with-param name="VAR_FORESTS" select="$VAR_FORESTS" />
+          <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+          <with-param name="VAR_HIGH_UPDATESEQUENCE" select="$VAR_HIGH_UPDATESEQUENCE" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_INHERENT_STYLE" select="$VAR_INHERENT_STYLE" />
+          <with-param name="VAR_INHERITED_STYLE" select="$VAR_INHERITED_STYLE" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_LAYER_WITH_INHERENT_SRS" select="$VAR_LAYER_WITH_INHERENT_SRS" />
+          <with-param name="VAR_LAYER_WITH_INHERENT_STYLE" select="$VAR_LAYER_WITH_INHERENT_STYLE" />
+          <with-param name="VAR_LAYER_WITH_INHERITED_SRS" select="$VAR_LAYER_WITH_INHERITED_SRS" />
+          <with-param name="VAR_LAYER_WITH_INHERITED_STYLE" select="$VAR_LAYER_WITH_INHERITED_STYLE" />
+          <with-param name="VAR_LAYER_WITH_STYLE" select="$VAR_LAYER_WITH_STYLE" />
+          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+          <with-param name="VAR_LOW_UPDATESEQUENCE" select="$VAR_LOW_UPDATESEQUENCE" />
+          <with-param name="VAR_MAP_NEATLINE" select="$VAR_MAP_NEATLINE" />
+          <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES" />
+          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+          <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT" />
+          <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS" />
+          <with-param name="VAR_STREAMS" select="$VAR_STREAMS" />
+          <with-param name="VAR_STYLE" select="$VAR_STYLE" />
+          <with-param name="VAR_TRANSPARENT_FORMAT" select="$VAR_TRANSPARENT_FORMAT" />
+          <with-param name="VAR_UNQUERYABLE_LAYER" select="$VAR_UNQUERYABLE_LAYER" />
+          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
         </call-test>
-        <xsl:if test="$stddata">
-          <call-test name="wms:basic_elements-param_rules-order_and_case-4">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
+
+        <xsl:if test="$basic_profile">
+          <call-test name="wms:wms-basic">
+            <with-param name="hosturl" select="$hosturl" />
+            <with-param name="VAR_STDDATA_EXISTS" select="$VAR_STDDATA_EXISTS" />
+            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
           </call-test>
         </xsl:if>
-        <xsl:if test="$queryable">
-          <call-test name="wms:basic_elements-param_rules-order_and_case-5">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
+
+        <xsl:if test="$queryable_profile">
+          <call-test name="wms:wms-queryable">
+            <with-param name="hosturl" select="$hosturl" />
+            <with-param name="VAR_WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES" />
+            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+            <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+            <with-param name="VAR_QUERYABLE_LAYERS_EXIST" select="$VAR_QUERYABLE_LAYERS_EXIST" />
+            <with-param name="VAR_STDDATA_EXISTS" select="$VAR_STDDATA_EXISTS" />
+            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+            <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+            <with-param name="VAR_BASIC_POLYGONS" select="$VAR_BASIC_POLYGONS" />
+            <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES" />
+            <with-param name="VAR_FORESTS" select="$VAR_FORESTS" />
+            <with-param name="VAR_STREAMS" select="$VAR_STREAMS" />
           </call-test>
         </xsl:if>
-        <call-test name="wms:basic_elements-version-negotiation-2">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:basic_elements-version-negotiation-4">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
+
         <xsl:if test="$recommended">
-          <call-test name="wms:dims-declaring-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
+          <call-test name="wms:wms-recommended">
+            <with-param name="stddata" select="$stddata" />
+            <with-param name="lossless" select="$lossless" />
+            <with-param name="hosturl" select="$hosturl" />
+            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+            <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+            <with-param name="VAR_PONDS" select="$VAR_PONDS" />
           </call-test>
         </xsl:if>
-        <call-test name="wms:dims-declaring-3">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:dims-declaring-4">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <xsl:if test="$basic_profile">
-          <call-test name="wms:profiles-basic-1">
-            <with-param name="VAR_STDDATA_EXISTS" select="$VAR_STDDATA_EXISTS"/>
-            <with-param name="hosturl" select="$hosturl"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$basic_profile">
-          <call-test name="wms:profiles-basic-2">
-            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT"/>
-            <with-param name="hosturl" select="$hosturl"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:profiles-queryable-1">
-            <with-param name="VAR_STDDATA_EXISTS" select="$VAR_STDDATA_EXISTS"/>
-            <with-param name="hosturl" select="$hosturl"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:profiles-queryable-2">
-            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT"/>
-            <with-param name="hosturl" select="$hosturl"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:profiles-queryable-3">
-            <with-param name="VAR_QUERYABLE_LAYERS_EXIST" select="$VAR_QUERYABLE_LAYERS_EXIST"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-            <with-param name="hosturl" select="$hosturl"/>
-          </call-test>
-        </xsl:if>
-        <call-test name="wms:wmsops-getcapabilities-output_formats-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-params-request-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <xsl:if test="not($updatesequence)">
-          <call-test name="wms:wmsops-getcapabilities-params-updatesequence-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$updatesequence">
-          <call-test name="wms:wmsops-getcapabilities-params-updatesequence-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_CURRENT_UPDATESEQUENCE" select="$VAR_CURRENT_UPDATESEQUENCE"/>
-            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$updatesequence and $manual_updatesequence">
-          <call-test name="wms:wmsops-getcapabilities-params-updatesequence-3">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LOW_UPDATESEQUENCE" select="$VAR_LOW_UPDATESEQUENCE"/>
-            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$updatesequence and $manual_updatesequence">
-          <call-test name="wms:wmsops-getcapabilities-params-updatesequence-4">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_HIGH_UPDATESEQUENCE" select="$VAR_HIGH_UPDATESEQUENCE"/>
-            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$updatesequence and $auto_updatesequence">
-          <call-test name="wms:wmsops-getcapabilities-params-updatesequence-5">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_AUTO_LOW_UPDATESEQUENCE" select="$VAR_AUTO_LOW_UPDATESEQUENCE"/>
-            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$updatesequence and $auto_updatesequence">
-          <call-test name="wms:wmsops-getcapabilities-params-updatesequence-6">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_AUTO_HIGH_UPDATESEQUENCE" select="$VAR_AUTO_HIGH_UPDATESEQUENCE"/>
-            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <call-test name="wms:wmsops-getcapabilities-params-version-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-params-version-2">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-params-version-3">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-params-version-4">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-params-version-5">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-params-version-6">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-response-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-response-2">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-response-capability_metadata-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
+
         <xsl:if test="$testgml">
-          <call-test name="wms:wmsops-getcapabilities-response-capability_metadata-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
+          <call-test name="wms:wms-getfeatureinfo">
+            <with-param name="queryable" select="$queryable" />
+            <with-param name="gml" select="$gml" />
+            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+            <with-param name=" VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+            <with-param name="VAR_LAKES" select="$VAR_LAKES" />
           </call-test>
         </xsl:if>
-        <call-test name="wms:wmsops-getcapabilities-response-general_metadata-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
+
         <xsl:if test="$free">
-          <call-test name="wms:wmsops-getcapabilities-response-general_metadata-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <call-test name="wms:wmsops-getcapabilities-response-layer_properties-bbox-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-response-layer_properties-dim_and_extent-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-response-layer_properties-dim_and_extent-2">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-response-layer_properties-identifier_and_authorityurl-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-response-layer_properties-identifier_and_authorityurl-2">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-response-layer_properties-latlonbbox-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-response-layer_properties-latlonbbox-2">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-response-layer_properties-srs-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getcapabilities-response-layer_properties-style-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                           select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-        </call-test>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:wmsops-getfeatureinfo-params-exceptions-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:wmsops-getfeatureinfo-params-exceptions-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:wmsops-getfeatureinfo-params-feature_count-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_BASIC_POLYGONS" select="$VAR_BASIC_POLYGONS"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:wmsops-getfeatureinfo-params-feature_count-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_BASIC_POLYGONS" select="$VAR_BASIC_POLYGONS"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:wmsops-getfeatureinfo-params-info_format-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable and $gml and $testgml">
-          <call-test name="wms:wmsops-getfeatureinfo-params-info_format-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable and $gml and $testgml">
-          <call-test name="wms:wmsops-getfeatureinfo-params-info_format-3">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-3">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_FORESTS" select="$VAR_FORESTS"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-4">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_STREAMS" select="$VAR_STREAMS"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$queryable_profile">
-          <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-5">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$getfeatureinfo and $unqueryablelayer">
-          <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-6">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_UNQUERYABLE_LAYER" select="$VAR_UNQUERYABLE_LAYER"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT"/>
-            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
-                              select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$recommended and $lossless and $stddata">
-          <call-test name="wms:wmsops-getmap-params-bbox-10">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_PONDS" select="$VAR_PONDS"/>
-            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$strictbboxconstraints and $lossless and $stddata">
-          <call-test name="wms:wmsops-getmap-params-bbox-11">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_PONDS" select="$VAR_PONDS"/>
-            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$loosebboxconstraints and $lossless and $stddata">
-          <call-test name="wms:wmsops-getmap-params-bbox-12">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_PONDS" select="$VAR_PONDS"/>
-            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata and $lossless">
-          <call-test name="wms:wmsops-getmap-params-bbox-3">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_STREAMS" select="$VAR_STREAMS"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_PONDS" select="$VAR_PONDS"/>
-            <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES"/>
-            <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS"/>
-            <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES"/>
-            <with-param name="VAR_BUILDINGS" select="$VAR_BUILDINGS"/>
-            <with-param name="VAR_MAP_NEATLINE" select="$VAR_MAP_NEATLINE"/>
-            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata and $lossless">
-          <call-test name="wms:wmsops-getmap-params-bbox-4">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-bbox-5">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-bbox-6">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-bbox-7">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-bbox-8">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$recommended and $lossless and $stddata">
-          <call-test name="wms:wmsops-getmap-params-bbox-9">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_PONDS" select="$VAR_PONDS"/>
-            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$lossless and $stddata">
-          <call-test name="wms:wmsops-getmap-params-bgcolor-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$lossless and $stddata">
-          <call-test name="wms:wmsops-getmap-params-bgcolor-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <call-test name="wms:wmsops-getmap-params-exceptions-1">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-        </call-test>
-        <call-test name="wms:wmsops-getmap-params-exceptions-2">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-        </call-test>
-        <xsl:if test="$se_inimage">
-          <call-test name="wms:wmsops-getmap-params-exceptions-4">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$se_blank and $lossless">
-          <call-test name="wms:wmsops-getmap-params-exceptions-5">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$se_blank and $transparency">
-          <call-test name="wms:wmsops-getmap-params-exceptions-6">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_TRANSPARENT_FORMAT" select="$VAR_TRANSPARENT_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$se_blank">
-          <call-test name="wms:wmsops-getmap-params-exceptions-7">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-format-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$gif and $stddata">
-          <call-test name="wms:wmsops-getmap-params-format-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$jpeg and $stddata">
-          <call-test name="wms:wmsops-getmap-params-format-3">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$png and $stddata">
-          <call-test name="wms:wmsops-getmap-params-format-4">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-layers-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-layers-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_STREAMS" select="$VAR_STREAMS"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-layers-3">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_MAP_NEATLINE" select="$VAR_MAP_NEATLINE"/>
-            <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS"/>
-            <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <call-test name="wms:wmsops-getmap-params-layers-5">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-        </call-test>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-layers-6">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-layers-7">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$recommended and $stddata">
-          <call-test name="wms:wmsops-getmap-params-request-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$inherentsrs and $stddata">
-          <call-test name="wms:wmsops-getmap-params-srs-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAYER_WITH_INHERENT_SRS" select="$VAR_LAYER_WITH_INHERENT_SRS"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$inheritedsrs and $stddata">
-          <call-test name="wms:wmsops-getmap-params-srs-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAYER_WITH_INHERITED_SRS" select="$VAR_LAYER_WITH_INHERITED_SRS"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-srs-3">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$inherentstyle and $stddata">
-          <call-test name="wms:wmsops-getmap-params-styles-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAYER_WITH_INHERENT_STYLE" select="$VAR_LAYER_WITH_INHERENT_STYLE"/>
-            <with-param name="VAR_INHERENT_STYLE" select="$VAR_INHERENT_STYLE"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$namedstyle and $stddata">
-          <call-test name="wms:wmsops-getmap-params-styles-10">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAYER_WITH_STYLE" select="$VAR_LAYER_WITH_STYLE"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_STYLE" select="$VAR_STYLE"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$inheritedstyle and $stddata">
-          <call-test name="wms:wmsops-getmap-params-styles-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAYER_WITH_INHERITED_STYLE" select="$VAR_LAYER_WITH_INHERITED_STYLE"/>
-            <with-param name="VAR_INHERITED_STYLE" select="$VAR_INHERITED_STYLE"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$namedstyle and $stddata">
-          <call-test name="wms:wmsops-getmap-params-styles-3">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAYER_WITH_STYLE" select="$VAR_LAYER_WITH_STYLE"/>
-            <with-param name="VAR_STYLE" select="$VAR_STYLE"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$namedstyle and $stddata">
-          <call-test name="wms:wmsops-getmap-params-styles-4">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAYER_WITH_STYLE" select="$VAR_LAYER_WITH_STYLE"/>
-            <with-param name="VAR_STYLE" select="$VAR_STYLE"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-styles-5">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-styles-6">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_PONDS" select="$VAR_PONDS"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$namedstyle and $stddata">
-          <call-test name="wms:wmsops-getmap-params-styles-7">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAYER_WITH_STYLE" select="$VAR_LAYER_WITH_STYLE"/>
-            <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES"/>
-            <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS"/>
-            <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES"/>
-            <with-param name="VAR_STYLE" select="$VAR_STYLE"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-styles-8">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES"/>
-            <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS"/>
-            <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES"/>
-            <with-param name="VAR_BUILDINGS" select="$VAR_BUILDINGS"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata">
-          <call-test name="wms:wmsops-getmap-params-styles-9">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES"/>
-            <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS"/>
-            <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES"/>
-            <with-param name="VAR_BUILDINGS" select="$VAR_BUILDINGS"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$transparency and $stddata">
-          <call-test name="wms:wmsops-getmap-params-transparent-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_TRANSPARENT_FORMAT" select="$VAR_TRANSPARENT_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$transparency and $stddata">
-          <call-test name="wms:wmsops-getmap-params-transparent-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_TRANSPARENT_FORMAT" select="$VAR_TRANSPARENT_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$transparency and $stddata">
-          <call-test name="wms:wmsops-getmap-params-transparent-3">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_TRANSPARENT_FORMAT" select="$VAR_TRANSPARENT_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$recommended and $stddata">
-          <call-test name="wms:wmsops-getmap-params-version-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata and $readable">
-          <call-test name="wms:wmsops-getmap-params-width_height-1">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_LAKES" select="$VAR_LAKES"/>
-            <with-param name="VAR_STREAMS" select="$VAR_STREAMS"/>
-            <with-param name="VAR_PONDS" select="$VAR_PONDS"/>
-            <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
-          </call-test>
-        </xsl:if>
-        <xsl:if test="$stddata and $readable">
-          <call-test name="wms:wmsops-getmap-params-width_height-2">
-            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
-            <with-param name="VAR_BASIC_POLYGONS" select="$VAR_BASIC_POLYGONS"/>
-            <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT"/>
-            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL"/>
+          <call-test name="wms:wms-fees">
+            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+            <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
           </call-test>
         </xsl:if>
 
-        <!-- Extended tests -->
-        <xsl:if test="$queryable_profile">
-          <ctl:for-each select="$VAR_WMS_CAPABILITIES//Capability/Request/GetFeatureInfo/Format">
-            <ctl:call-test name="wms:wmsops-getfeatureinfo-each-info_format">
-              <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*"/>
-              <ctl:with-param name="FORMAT" select="." label="each GetFeatureInfo format" label-expr="concat('format &quot;', ., '&quot;')"/>
-            </ctl:call-test>
-          </ctl:for-each>
+        <xsl:if test="$loosebboxconstraints or $strictbboxconstraints">
+          <call-test name="wms:wms-bbox">
+            <with-param name="loosebboxconstraints" select="$loosebboxconstraints" />
+            <with-param name="strictbboxconstraints" select="$strictbboxconstraints" />
+            <with-param name="lossless" select="$lossless" />
+            <with-param name="stddata" select="$stddata" />
+            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+            <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+          </call-test>
         </xsl:if>
-
-        <ctl:for-each select="$VAR_WMS_CAPABILITIES//Layer/Style[not(Name=../ancestor::Layer/Style/Name)]">
-            <ctl:call-test name="wms:wmsops-getmap-each-style">
-              <ctl:with-param name="capabilities" select="$VAR_WMS_CAPABILITIES/*"/>
-              <ctl:with-param name="style" select="./Name" label="each style" label-expr="concat('style &quot;', ./Name, '&quot;')"/>
-              <ctl:with-param name="layer" select="../Name"/>
-            </ctl:call-test>
-        </ctl:for-each>
-        
-        <ctl:for-each select="$VAR_WMS_CAPABILITIES//Layer/Name">
-          <ctl:call-test name="wms:wmsops-getmap-each-layer">
-            <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*"/>
-            <ctl:with-param name="layer" select="string(.)" label="each named layer" label-expr="concat('layer &quot;', ., '&quot;')"/>
-          </ctl:call-test>
-        </ctl:for-each>
-
-        <ctl:for-each select="$VAR_WMS_CAPABILITIES//Layer//SRS[not(. = ../preceding::Layer/SRS) and not(. = ../ancestor::Layer/SRS) and not(starts-with(., 'AUTO'))]">
-          <ctl:call-test name="wms:wmsops-getmap-each-srs">
-            <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*"/>
-            <ctl:with-param name="srs" select="." label="each SRS" label-expr="concat('SRS &quot;', ., '&quot;')"/>
-          </ctl:call-test>
-        </ctl:for-each>
-
-        <ctl:for-each select="$VAR_WMS_CAPABILITIES/Request/GetMap/Format">
-          <ctl:call-test name="wms:wmsops-getmap-each-format">
-            <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*"/>
-            <ctl:with-param name="format" select="." label="each GetMap format" label-expr="concat('format &quot;', ., '&quot;')"/>
-          </ctl:call-test>
-        </ctl:for-each>
-
-        <ctl:for-each select="$VAR_WMS_CAPABILITIES/Request/GetMap/Format">
-          <ctl:call-test name="wms:wmsops-getmap-each-format-transparent">
-            <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*"/>
-            <ctl:with-param name="format" select="." label="each GetMap format" label-expr="concat('format &quot;', ., '&quot;')"/>
-          </ctl:call-test>
-        </ctl:for-each>
-
-        <call-test name="wms:wmsops-getmap-layer-encoded-name">
-          <with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
-        </call-test>
-
-        <call-test name="wms:basic_elements-validate-exception">
-          <with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
-        </call-test>
 
       </xsl:for-each>
     </code>
   </test>
 
+  <test name="wms:wms-no-profile">
+    <param name="auto_updatesequence" />
+    <param name="getfeatureinfo" />
+    <param name="gif" />
+    <param name="inherentsrs" />
+    <param name="inherentstyle" />
+    <param name="inheritedsrs" />
+    <param name="inheritedstyle" />
+    <param name="is-interactive-enabled" />
+    <param name="jpeg" />
+    <param name="lossless" />
+    <param name="manual_updatesequence" />
+    <param name="namedstyle" />
+    <param name="png" />
+    <param name="queryable" />
+    <param name="readable" />
+    <param name="se_blank" />
+    <param name="se_inimage" />
+    <param name="stddata" />
+    <param name="stddata " />
+    <param name="transparency" />
+    <param name="unqueryablelayer  " />
+    <param name="updatesequence" />
+    <param name="hosturl" />
+    <param name="VAR_AUTO_HIGH_UPDATESEQUENCE" />
+    <param name="VAR_AUTO_LOW_UPDATESEQUENCE" />
+    <param name="VAR_BASIC_POLYGONS" />
+    <param name="VAR_BRIDGES" />
+    <param name="VAR_BUILDINGS" />
+    <param name="VAR_CURRENT_UPDATESEQUENCE" />
+    <param name="VAR_DIVIDED_ROUTES" />
+    <param name="VAR_FORESTS" />
+    <param name="VAR_GET_FEATURE_INFO_FORMAT" />
+    <param name="VAR_HIGH_UPDATESEQUENCE" />
+    <param name="VAR_IMAGE_FORMAT" />
+    <param name="VAR_INHERENT_STYLE" />
+    <param name="VAR_INHERITED_STYLE" />
+    <param name="VAR_LAKES" />
+    <param name="VAR_LAYER_WITH_INHERENT_SRS" />
+    <param name="VAR_LAYER_WITH_INHERENT_STYLE" />
+    <param name="VAR_LAYER_WITH_INHERITED_SRS" />
+    <param name="VAR_LAYER_WITH_INHERITED_STYLE" />
+    <param name="VAR_LAYER_WITH_STYLE" />
+    <param name="VAR_LOSSLESS_FORMAT" />
+    <param name="VAR_LOW_UPDATESEQUENCE" />
+    <param name="VAR_MAP_NEATLINE" />
+    <param name="VAR_NAMED_PLACES" />
+    <param name="VAR_PONDS" />
+    <param name="VAR_READABLE_IMAGE_FORMAT" />
+    <param name="VAR_ROAD_SEGMENTS" />
+    <param name="VAR_STREAMS" />
+    <param name="VAR_STYLE" />
+    <param name="VAR_TRANSPARENT_FORMAT" />
+    <param name="VAR_UNQUERYABLE_LAYER" />
+    <param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+    <param name="VAR_WMS_GET_MAP_HTTP_GET_URL" />
+    <param name="VAR_WMS_VERSION" />
+    <assertion>This WMS is valid against 'no' profile</assertion>
+    <code>
+      <xsl:if test="$stddata and $readable and $is-interactive-enabled = 'true'">
+        <call-test name="wms:wmsops-getmap-params-bbox-1">
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_BASIC_POLYGONS" select="$VAR_BASIC_POLYGONS" />
+          <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata and $readable and $is-interactive-enabled = 'true'">
+        <call-test name="wms:wmsops-getmap-params-bbox-2">
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_STREAMS" select="$VAR_STREAMS" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+          <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES" />
+          <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS" />
+          <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES" />
+          <with-param name="VAR_BUILDINGS" select="$VAR_BUILDINGS" />
+          <with-param name="VAR_MAP_NEATLINE" select="$VAR_MAP_NEATLINE" />
+          <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT" />
+          <with-param name="hosturl" select="$hosturl" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$se_inimage and $readable and $is-interactive-enabled = 'true'">
+        <call-test name="wms:wmsops-getmap-params-exceptions-3">
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata and $readable and $is-interactive-enabled = 'true'">
+        <call-test name="wms:wmsops-getmap-params-layers-4">
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_FORESTS" select="$VAR_FORESTS" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES" />
+          <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT" />
+          <with-param name="hosturl" select="$hosturl" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata and $readable and $is-interactive-enabled = 'true'">
+        <call-test name="wms:wmsops-getmap-params-width_height-3">
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_STREAMS" select="$VAR_STREAMS" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+          <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES" />
+          <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS" />
+          <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES" />
+          <with-param name="VAR_BUILDINGS" select="$VAR_BUILDINGS" />
+          <with-param name="VAR_MAP_NEATLINE" select="$VAR_MAP_NEATLINE" />
+          <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT" />
+        </call-test>
+      </xsl:if>
+      <call-test name="wms:basic_elements-param_rules-order_and_case-3">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <xsl:if test="$stddata">
+        <call-test name="wms:basic_elements-param_rules-order_and_case-4">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$queryable">
+        <call-test name="wms:basic_elements-param_rules-order_and_case-5">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+          <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <call-test name="wms:basic_elements-version-negotiation-2">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:basic_elements-version-negotiation-4">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:dims-declaring-3">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:dims-declaring-4">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-output_formats-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-params-request-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <xsl:if test="not($updatesequence)">
+        <call-test name="wms:wmsops-getcapabilities-params-updatesequence-1">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                      select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$updatesequence">
+        <call-test name="wms:wmsops-getcapabilities-params-updatesequence-2">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_CURRENT_UPDATESEQUENCE" select="$VAR_CURRENT_UPDATESEQUENCE" />
+          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                      select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$updatesequence and $manual_updatesequence">
+        <call-test name="wms:wmsops-getcapabilities-params-updatesequence-3">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LOW_UPDATESEQUENCE" select="$VAR_LOW_UPDATESEQUENCE" />
+          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                      select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$updatesequence and $manual_updatesequence">
+        <call-test name="wms:wmsops-getcapabilities-params-updatesequence-4">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_HIGH_UPDATESEQUENCE" select="$VAR_HIGH_UPDATESEQUENCE" />
+          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                      select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$updatesequence and $auto_updatesequence">
+        <call-test name="wms:wmsops-getcapabilities-params-updatesequence-5">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_AUTO_LOW_UPDATESEQUENCE" select="$VAR_AUTO_LOW_UPDATESEQUENCE" />
+          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                      select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$updatesequence and $auto_updatesequence">
+        <call-test name="wms:wmsops-getcapabilities-params-updatesequence-6">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_AUTO_HIGH_UPDATESEQUENCE" select="$VAR_AUTO_HIGH_UPDATESEQUENCE" />
+          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                      select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <call-test name="wms:wmsops-getcapabilities-params-version-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-params-version-2">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-params-version-3">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-params-version-4">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-params-version-5">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-params-version-6">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-2">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-capability_metadata-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-general_metadata-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-layer_properties-bbox-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-layer_properties-dim_and_extent-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-layer_properties-dim_and_extent-2">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-layer_properties-identifier_and_authorityurl-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-layer_properties-identifier_and_authorityurl-2">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-layer_properties-latlonbbox-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-layer_properties-latlonbbox-2">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-layer_properties-srs-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getcapabilities-response-layer_properties-style-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+
+      <xsl:if test="$getfeatureinfo and $unqueryablelayer">
+        <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-6">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_UNQUERYABLE_LAYER" select="$VAR_UNQUERYABLE_LAYER" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+          <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                      select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata and $lossless">
+        <call-test name="wms:wmsops-getmap-params-bbox-3">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_STREAMS" select="$VAR_STREAMS" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+          <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES" />
+          <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS" />
+          <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES" />
+          <with-param name="VAR_BUILDINGS" select="$VAR_BUILDINGS" />
+          <with-param name="VAR_MAP_NEATLINE" select="$VAR_MAP_NEATLINE" />
+          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata and $lossless">
+        <call-test name="wms:wmsops-getmap-params-bbox-4">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-bbox-5">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-bbox-6">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-bbox-7">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-bbox-8">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$lossless and $stddata">
+        <call-test name="wms:wmsops-getmap-params-bgcolor-1">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$lossless and $stddata">
+        <call-test name="wms:wmsops-getmap-params-bgcolor-2">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <call-test name="wms:wmsops-getmap-params-exceptions-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getmap-params-exceptions-2">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+      </call-test>
+      <xsl:if test="$se_inimage">
+        <call-test name="wms:wmsops-getmap-params-exceptions-4">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$se_blank and $lossless">
+        <call-test name="wms:wmsops-getmap-params-exceptions-5">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$se_blank and $transparency">
+        <call-test name="wms:wmsops-getmap-params-exceptions-6">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_TRANSPARENT_FORMAT" select="$VAR_TRANSPARENT_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$se_blank">
+        <call-test name="wms:wmsops-getmap-params-exceptions-7">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-format-1">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$gif and $stddata">
+        <call-test name="wms:wmsops-getmap-params-format-2">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$jpeg and $stddata">
+        <call-test name="wms:wmsops-getmap-params-format-3">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$png and $stddata">
+        <call-test name="wms:wmsops-getmap-params-format-4">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-layers-1">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-layers-2">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_STREAMS" select="$VAR_STREAMS" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-layers-3">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_MAP_NEATLINE" select="$VAR_MAP_NEATLINE" />
+          <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS" />
+          <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <call-test name="wms:wmsops-getmap-params-layers-5">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+      </call-test>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-layers-6">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-layers-7">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$inherentsrs and $stddata">
+        <call-test name="wms:wmsops-getmap-params-srs-1">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAYER_WITH_INHERENT_SRS" select="$VAR_LAYER_WITH_INHERENT_SRS" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$inheritedsrs and $stddata">
+        <call-test name="wms:wmsops-getmap-params-srs-2">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAYER_WITH_INHERITED_SRS" select="$VAR_LAYER_WITH_INHERITED_SRS" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-srs-3">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$inherentstyle and $stddata">
+        <call-test name="wms:wmsops-getmap-params-styles-1">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAYER_WITH_INHERENT_STYLE" select="$VAR_LAYER_WITH_INHERENT_STYLE" />
+          <with-param name="VAR_INHERENT_STYLE" select="$VAR_INHERENT_STYLE" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$namedstyle and $stddata">
+        <call-test name="wms:wmsops-getmap-params-styles-10">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAYER_WITH_STYLE" select="$VAR_LAYER_WITH_STYLE" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_STYLE" select="$VAR_STYLE" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$inheritedstyle and $stddata">
+        <call-test name="wms:wmsops-getmap-params-styles-2">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAYER_WITH_INHERITED_STYLE" select="$VAR_LAYER_WITH_INHERITED_STYLE" />
+          <with-param name="VAR_INHERITED_STYLE" select="$VAR_INHERITED_STYLE" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$namedstyle and $stddata">
+        <call-test name="wms:wmsops-getmap-params-styles-3">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAYER_WITH_STYLE" select="$VAR_LAYER_WITH_STYLE" />
+          <with-param name="VAR_STYLE" select="$VAR_STYLE" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$namedstyle and $stddata">
+        <call-test name="wms:wmsops-getmap-params-styles-4">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAYER_WITH_STYLE" select="$VAR_LAYER_WITH_STYLE" />
+          <with-param name="VAR_STYLE" select="$VAR_STYLE" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-styles-5">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-styles-6">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$namedstyle and $stddata">
+        <call-test name="wms:wmsops-getmap-params-styles-7">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAYER_WITH_STYLE" select="$VAR_LAYER_WITH_STYLE" />
+          <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES" />
+          <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS" />
+          <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES" />
+          <with-param name="VAR_STYLE" select="$VAR_STYLE" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-styles-8">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES" />
+          <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS" />
+          <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES" />
+          <with-param name="VAR_BUILDINGS" select="$VAR_BUILDINGS" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-styles-9">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_BRIDGES" select="$VAR_BRIDGES" />
+          <with-param name="VAR_ROAD_SEGMENTS" select="$VAR_ROAD_SEGMENTS" />
+          <with-param name="VAR_DIVIDED_ROUTES" select="$VAR_DIVIDED_ROUTES" />
+          <with-param name="VAR_BUILDINGS" select="$VAR_BUILDINGS" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$transparency and $stddata">
+        <call-test name="wms:wmsops-getmap-params-transparent-1">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_TRANSPARENT_FORMAT" select="$VAR_TRANSPARENT_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$transparency and $stddata">
+        <call-test name="wms:wmsops-getmap-params-transparent-2">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_TRANSPARENT_FORMAT" select="$VAR_TRANSPARENT_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$transparency and $stddata">
+        <call-test name="wms:wmsops-getmap-params-transparent-3">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_TRANSPARENT_FORMAT" select="$VAR_TRANSPARENT_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata and $readable">
+        <call-test name="wms:wmsops-getmap-params-width_height-1">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_STREAMS" select="$VAR_STREAMS" />
+          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+          <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata and $readable">
+        <call-test name="wms:wmsops-getmap-params-width_height-2">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_BASIC_POLYGONS" select="$VAR_BASIC_POLYGONS" />
+          <with-param name="VAR_READABLE_IMAGE_FORMAT" select="$VAR_READABLE_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+
+      <!-- Extended tests -->
+
+      <ctl:for-each select="$VAR_WMS_CAPABILITIES//Layer/Style[not(Name=../ancestor::Layer/Style/Name)]">
+        <ctl:call-test name="wms:wmsops-getmap-each-style">
+          <ctl:with-param name="capabilities" select="$VAR_WMS_CAPABILITIES/*" />
+          <ctl:with-param name="style" select="./Name" label="each style"
+                          label-expr="concat('style &quot;', ./Name, '&quot;')" />
+          <ctl:with-param name="layer" select="../Name" />
+        </ctl:call-test>
+      </ctl:for-each>
+
+      <ctl:for-each select="$VAR_WMS_CAPABILITIES//Layer/Name">
+        <ctl:call-test name="wms:wmsops-getmap-each-layer">
+          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+          <ctl:with-param name="layer" select="string(.)" label="each named layer"
+                          label-expr="concat('layer &quot;', ., '&quot;')" />
+        </ctl:call-test>
+      </ctl:for-each>
+
+      <ctl:for-each
+              select="$VAR_WMS_CAPABILITIES//Layer//SRS[not(. = ../preceding::Layer/SRS) and not(. = ../ancestor::Layer/SRS) and not(starts-with(., 'AUTO'))]">
+        <ctl:call-test name="wms:wmsops-getmap-each-srs">
+          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+          <ctl:with-param name="srs" select="." label="each SRS" label-expr="concat('SRS &quot;', ., '&quot;')" />
+        </ctl:call-test>
+      </ctl:for-each>
+
+      <ctl:for-each select="$VAR_WMS_CAPABILITIES/Request/GetMap/Format">
+        <ctl:call-test name="wms:wmsops-getmap-each-format">
+          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+          <ctl:with-param name="format" select="." label="each GetMap format"
+                          label-expr="concat('format &quot;', ., '&quot;')" />
+        </ctl:call-test>
+      </ctl:for-each>
+
+      <ctl:for-each select="$VAR_WMS_CAPABILITIES/Request/GetMap/Format">
+        <ctl:call-test name="wms:wmsops-getmap-each-format-transparent">
+          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+          <ctl:with-param name="format" select="." label="each GetMap format"
+                          label-expr="concat('format &quot;', ., '&quot;')" />
+        </ctl:call-test>
+      </ctl:for-each>
+
+      <call-test name="wms:wmsops-getmap-layer-encoded-name">
+        <with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+      </call-test>
+
+      <call-test name="wms:basic_elements-validate-exception">
+        <with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+      </call-test>
+    </code>
+  </test>
+
+  <test name="wms:wms-basic">
+    <param name="hosturl" />
+    <param name="VAR_STDDATA_EXISTS" />
+    <param name="VAR_LOSSLESS_FORMAT" />
+    <assertion>This WMS is valid against the 'basic' profile</assertion>
+    <code>
+      <call-test name="wms:profiles-basic-1">
+        <with-param name="VAR_STDDATA_EXISTS" select="$VAR_STDDATA_EXISTS" />
+        <with-param name="hosturl" select="$hosturl" />
+      </call-test>
+      <call-test name="wms:profiles-basic-2">
+        <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+        <with-param name="hosturl" select="$hosturl" />
+      </call-test>
+    </code>
+  </test>
+
+  <test name="wms:wms-queryable">
+    <param name="hosturl" />
+    <param name="VAR_WMS_CAPABILITIES" />
+    <param name="VAR_WMS_VERSION" />
+    <param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+    <param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+    <param name="VAR_GET_FEATURE_INFO_FORMAT" />
+    <param name="VAR_IMAGE_FORMAT" />
+    <param name="VAR_QUERYABLE_LAYERS_EXIST" />
+    <param name="VAR_STDDATA_EXISTS" />
+    <param name="VAR_LOSSLESS_FORMAT" />
+    <param name="VAR_LAKES" />
+    <param name="VAR_BASIC_POLYGONS" />
+    <param name="VAR_NAMED_PLACES" />
+    <param name="VAR_FORESTS" />
+    <param name="VAR_STREAMS" />
+    <assertion>This WMS is valid against the 'queryable' profile</assertion>
+    <code>
+      <call-test name="wms:profiles-queryable-1">
+        <with-param name="VAR_STDDATA_EXISTS" select="$VAR_STDDATA_EXISTS" />
+        <with-param name="hosturl" select="$hosturl" />
+      </call-test>
+      <call-test name="wms:profiles-queryable-2">
+        <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+        <with-param name="hosturl" select="$hosturl" />
+      </call-test>
+      <call-test name="wms:profiles-queryable-3">
+        <with-param name="VAR_QUERYABLE_LAYERS_EXIST" select="$VAR_QUERYABLE_LAYERS_EXIST" />
+        <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+        <with-param name="hosturl" select="$hosturl" />
+      </call-test>
+      <call-test name="wms:wmsops-getfeatureinfo-params-exceptions-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+        <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getfeatureinfo-params-exceptions-2">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+        <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getfeatureinfo-params-feature_count-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_BASIC_POLYGONS" select="$VAR_BASIC_POLYGONS" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+        <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getfeatureinfo-params-feature_count-2">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_BASIC_POLYGONS" select="$VAR_BASIC_POLYGONS" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+        <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getfeatureinfo-params-info_format-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+        <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-2">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES" />
+        <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+        <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-3">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES" />
+        <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+        <with-param name="VAR_FORESTS" select="$VAR_FORESTS" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+        <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-4">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_NAMED_PLACES" select="$VAR_NAMED_PLACES" />
+        <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+        <with-param name="VAR_STREAMS" select="$VAR_STREAMS" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+        <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+      </call-test>
+      <call-test name="wms:wmsops-getfeatureinfo-params-query_layers-5">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+        <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+        <with-param name="VAR_GET_FEATURE_INFO_FORMAT" select="$VAR_GET_FEATURE_INFO_FORMAT" />
+        <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+      </call-test>
+      <ctl:for-each select="$VAR_WMS_CAPABILITIES//Capability/Request/GetFeatureInfo/Format">
+        <ctl:call-test name="wms:wmsops-getfeatureinfo-each-info_format">
+          <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES/*" />
+          <ctl:with-param name="FORMAT" select="." label="each GetFeatureInfo format"
+                          label-expr="concat('format &quot;', ., '&quot;')" />
+        </ctl:call-test>
+      </ctl:for-each>
+    </code>
+  </test>
+
+  <test name="wms:wms-recommended">
+    <param name="stddata" />
+    <param name="lossless" />
+    <param name="hosturl" />
+    <param name="VAR_WMS_VERSION" />
+    <param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+    <param name="VAR_WMS_GET_MAP_HTTP_GET_URL" />
+    <param name="VAR_IMAGE_FORMAT" />
+    <param name="VAR_LOSSLESS_FORMAT" />
+    <param name="VAR_LAKES" />
+    <param name="VAR_PONDS" />
+    <assertion>This WMS is valid against the test 'Recommendation Support'</assertion>
+    <code>
+      <call-test name="wms:dims-declaring-1">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+      </call-test>
+      <xsl:if test="$lossless and $stddata">
+        <call-test name="wms:wmsops-getmap-params-bbox-10">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$lossless and $stddata">
+        <call-test name="wms:wmsops-getmap-params-bbox-9">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-request-1">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$stddata">
+        <call-test name="wms:wmsops-getmap-params-version-1">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+    </code>
+  </test>
+
+  <test name="wms:wms-getfeatureinfo">
+    <param name="queryable" />
+    <param name="gml" />
+    <param name="VAR_WMS_VERSION" />
+    <param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+    <param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+    <param name="VAR_IMAGE_FORMAT" />
+    <param name="VAR_LAKES" />
+    <assertion>This WMS is valid against the test 'GML FeatureInfo'</assertion>
+    <code>
+        <call-test name="wms:wmsops-getcapabilities-response-capability_metadata-2">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                      select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+        </call-test>
+      <xsl:if test="$queryable and $gml">
+        <call-test name="wms:wmsops-getfeatureinfo-params-info_format-2">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                      select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$queryable and $gml">
+        <call-test name="wms:wmsops-getfeatureinfo-params-info_format-3">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_LAKES" select="$VAR_LAKES" />
+          <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
+          <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
+                      select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+    </code>
+  </test>
+
+  <test name="wms:wms-fees">
+    <param name="VAR_WMS_VERSION" />
+    <param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
+    <assertion>This WMS is valid against the test 'Fees and Access Constraints'</assertion>
+    <code>
+      <call-test name="wms:wmsops-getcapabilities-response-general_metadata-2">
+        <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION"/>
+        <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
+                    select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"/>
+      </call-test>
+    </code>
+  </test>
+
+  <test name="wms:wms-bbox">
+    <param name="loosebboxconstraints" />
+    <param name="strictbboxconstraints" />
+    <param name="lossless" />
+    <param name="stddata" />
+    <param name="VAR_WMS_VERSION" />
+    <param name="VAR_WMS_GET_MAP_HTTP_GET_URL" />
+    <param name="VAR_LOSSLESS_FORMAT" />
+    <param name="VAR_PONDS" />
+    <assertion>This WMS is valid against the test 'BoundingBox Constraints'</assertion>
+    <code>
+      <xsl:if test="$loosebboxconstraints and $lossless and $stddata">
+        <call-test name="wms:wmsops-getmap-params-bbox-12">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+      <xsl:if test="$strictbboxconstraints and $lossless and $stddata">
+        <call-test name="wms:wmsops-getmap-params-bbox-11">
+          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+        </call-test>
+      </xsl:if>
+    </code>
+  </test>
 
   <test name="wms:basic_elements-param_rules-order_and_case-3">
     <param name="VAR_WMS_VERSION"/>
