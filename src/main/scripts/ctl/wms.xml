@@ -596,7 +596,7 @@
     </code>
   </test>
 
-  <test name="wms:wms-no-profile">
+  <test name="wms:wms-no-profile" isConformanceClass="true" isBasic="true">
     <param name="auto_updatesequence" />
     <param name="getfeatureinfo" />
     <param name="gif" />
@@ -1273,7 +1273,7 @@
     </code>
   </test>
 
-  <test name="wms:wms-basic">
+  <test name="wms:wms-basic" isConformanceClass="true" isBasic="true">
     <param name="hosturl" />
     <param name="VAR_STDDATA_EXISTS" />
     <param name="VAR_LOSSLESS_FORMAT" />
@@ -1290,7 +1290,7 @@
     </code>
   </test>
 
-  <test name="wms:wms-queryable">
+  <test name="wms:wms-queryable" isConformanceClass="true" isBasic="false">
     <param name="hosturl" />
     <param name="VAR_WMS_CAPABILITIES" />
     <param name="VAR_WMS_VERSION" />
@@ -1418,7 +1418,7 @@
     </code>
   </test>
 
-  <test name="wms:wms-recommended">
+  <test name="wms:wms-recommended" isConformanceClass="true" isBasic="false">
     <param name="stddata" />
     <param name="lossless" />
     <param name="hosturl" />
@@ -1467,7 +1467,7 @@
     </code>
   </test>
 
-  <test name="wms:wms-getfeatureinfo">
+  <test name="wms:wms-getfeatureinfo" isConformanceClass="true" isBasic="false">
     <param name="queryable" />
     <param name="gml" />
     <param name="VAR_WMS_VERSION" />
@@ -1501,7 +1501,7 @@
     </code>
   </test>
 
-  <test name="wms:wms-fees">
+  <test name="wms:wms-fees" isConformanceClass="true" isBasic="false">
     <param name="VAR_WMS_VERSION" />
     <param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
     <assertion>This WMS is valid against the test 'Fees and Access Constraints'</assertion>
@@ -1514,7 +1514,7 @@
     </code>
   </test>
 
-  <test name="wms:wms-bbox">
+  <test name="wms:wms-bbox" isConformanceClass="true" isBasic="false">
     <param name="loosebboxconstraints" />
     <param name="strictbboxconstraints" />
     <param name="lossless" />
