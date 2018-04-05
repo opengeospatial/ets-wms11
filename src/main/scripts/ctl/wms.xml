@@ -566,7 +566,7 @@
             <with-param name="gml" select="$gml" />
             <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
             <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
-            <with-param name=" VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
+            <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
             <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
             <with-param name="VAR_LAKES" select="$VAR_LAKES" />
           </call-test>
@@ -1436,37 +1436,33 @@
         <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
                     select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
       </call-test>
-      <xsl:if test="$lossless and $stddata">
-        <call-test name="wms:wmsops-getmap-params-bbox-10">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
-          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
-          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
-          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
-        </call-test>
-      </xsl:if>
-      <xsl:if test="$lossless and $stddata">
-        <call-test name="wms:wmsops-getmap-params-bbox-9">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
-          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
-          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
-          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
-        </call-test>
-      </xsl:if>
-      <xsl:if test="$stddata">
+      <xsl:if test="$stddata = 'true'">
         <call-test name="wms:wmsops-getmap-params-request-1">
           <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
           <with-param name="VAR_LAKES" select="$VAR_LAKES" />
           <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
           <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
         </call-test>
-      </xsl:if>
-      <xsl:if test="$stddata">
         <call-test name="wms:wmsops-getmap-params-version-1">
           <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
           <with-param name="VAR_LAKES" select="$VAR_LAKES" />
           <with-param name="VAR_IMAGE_FORMAT" select="$VAR_IMAGE_FORMAT" />
           <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
         </call-test>
+        <xsl:if test="$lossless = 'true'">
+          <call-test name="wms:wmsops-getmap-params-bbox-10">
+            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+            <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+          </call-test>
+          <call-test name="wms:wmsops-getmap-params-bbox-9">
+            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+            <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+          </call-test>
+        </xsl:if>
       </xsl:if>
     </code>
   </test>
@@ -1486,7 +1482,7 @@
         <with-param name="VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL"
                     select="$VAR_WMS_GET_CAPABILITIES_HTTP_GET_URL" />
       </call-test>
-      <xsl:if test="$queryable and $gml">
+      <xsl:if test="$queryable = 'true' and $gml = 'true' ">
         <call-test name="wms:wmsops-getfeatureinfo-params-info_format-2">
           <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
           <with-param name="VAR_LAKES" select="$VAR_LAKES" />
@@ -1494,8 +1490,6 @@
           <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL"
                       select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
         </call-test>
-      </xsl:if>
-      <xsl:if test="$queryable and $gml">
         <call-test name="wms:wmsops-getfeatureinfo-params-info_format-3">
           <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
           <with-param name="VAR_LAKES" select="$VAR_LAKES" />
@@ -1531,21 +1525,23 @@
     <param name="VAR_PONDS" />
     <assertion>This WMS is valid against the test 'BoundingBox Constraints'</assertion>
     <code>
-      <xsl:if test="$loosebboxconstraints and $lossless and $stddata">
-        <call-test name="wms:wmsops-getmap-params-bbox-12">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
-          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
-          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
-          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
-        </call-test>
-      </xsl:if>
-      <xsl:if test="$strictbboxconstraints and $lossless and $stddata">
-        <call-test name="wms:wmsops-getmap-params-bbox-11">
-          <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
-          <with-param name="VAR_PONDS" select="$VAR_PONDS" />
-          <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
-          <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
-        </call-test>
+      <xsl:if test="$lossless = 'true' and $stddata = 'true'">
+        <xsl:if test="$loosebboxconstraints = 'true'">
+          <call-test name="wms:wmsops-getmap-params-bbox-12">
+            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+            <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+          </call-test>
+        </xsl:if>
+        <xsl:if test="$strictbboxconstraints = 'true'">
+          <call-test name="wms:wmsops-getmap-params-bbox-11">
+            <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
+            <with-param name="VAR_PONDS" select="$VAR_PONDS" />
+            <with-param name="VAR_LOSSLESS_FORMAT" select="$VAR_LOSSLESS_FORMAT" />
+            <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
+          </call-test>
+        </xsl:if>
       </xsl:if>
     </code>
   </test>
