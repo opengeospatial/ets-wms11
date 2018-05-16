@@ -1,5 +1,8 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.17 (2018-05-16)
+   * [#53](https://github.com/opengeospatial/ets-wms11/issues/53) - Update CTL with better information about conformance classes
+
 ## 1.16 (2017-08-22)
    * [#52](https://github.com/opengeospatial/ets-wms11/issues/52) - No Rest API
    * [#54](https://github.com/opengeospatial/ets-wms11/issues/54) - Problem with WMS 1.1.1 validation (wms:wmsops-getmap-each-srs fails due to XSLT failure)
