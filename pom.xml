@@ -146,6 +146,7 @@
         </dependencies>
         <configuration>
           <relativizeDecorationLinks>false</relativizeDecorationLinks>
+          <skipDeploy>true</skipDeploy>
         </configuration>
       </plugin>
       <plugin>
