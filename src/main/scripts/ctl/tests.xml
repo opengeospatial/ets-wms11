@@ -751,7 +751,7 @@
                <td>SERVICE = WMS</td>
             </tr>
             <tr align="left">
-               <td>REQUEST = capabilities</td>
+               <td>REQUEST = GetCapabilities</td>
             </tr>
             <tr align="left">
                <td>WMTVER = 1.1.1</td>
@@ -775,7 +775,7 @@
       </url>
       <method>get</method>
       <param name="SeRvIcE">WMS</param>
-      <param name="ReQuEsT">capabilities</param>
+      <param name="ReQuEsT">GetCapabilities</param>
       <param name="WmTvEr">1.1.1</param>
     </request>
   </xsl:variable>
