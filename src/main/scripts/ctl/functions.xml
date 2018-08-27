@@ -317,7 +317,7 @@ MIME parameters don't have to match anymore - see issue 24, MIME type test too s
       <ctl:description>Substrings the first part of the content-type without parameters (e.g 'image/png; mode=24bit' results in 'image/png')</ctl:description>
       <ctl:param name="contenttype">The content-type.</ctl:param>
       <ctl:code>
-         <xsl:value-of select="normalize-space(substring-before(concat(§contenttype, ';'), ';'))"/>
+         <xsl:value-of select="normalize-space(substring-before(concat($contenttype, ';'), ';'))"/>
       </ctl:code>
    </ctl:function>
 
