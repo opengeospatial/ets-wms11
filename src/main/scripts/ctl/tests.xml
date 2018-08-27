@@ -5634,7 +5634,8 @@
     </request>
   </xsl:variable>
   <xsl:for-each select="$request1">
-    <xsl:variable name="expression">not(normalize-space(substring-before(concat(/headers/header[translate(name, 'CONTYPE', 'contype') = 'content-type']/value, ';'), ';')) = '<xsl:value-of select="$VAR_IMAGE_FORMAT"/>')</xsl:variable>
+    <xsl:variable name="expression">not(functions:content-type(/headers/header[translate(name, 'CONTYPE', 'contype') = 'content-type']/value) =
+                                        functions:content-type('<xsl:value-of select="$VAR_IMAGE_FORMAT"/>'))</xsl:variable>
     <xsl:if test="saxon:evaluate($expression)">
       <fail/>
     </xsl:if>
