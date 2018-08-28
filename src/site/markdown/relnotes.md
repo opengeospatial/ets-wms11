@@ -1,5 +1,9 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.18 (2018-08-28)
+   * [#63](https://github.com/opengeospatial/ets-wms11/issues/63) - Test wms:wmsops-getmap-params-exceptions-4 fails if format with parameter is used in request
+   * [#60](https://github.com/opengeospatial/ets-wms11/issues/60) - Test wms:wmsops-getcapabilities-params-request-1 uses wrong request parameter value
+
 ## 1.17 (2018-05-16)
    * [#53](https://github.com/opengeospatial/ets-wms11/issues/53) - Update CTL with better information about conformance classes
 
