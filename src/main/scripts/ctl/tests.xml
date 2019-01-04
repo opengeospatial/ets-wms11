@@ -3492,7 +3492,7 @@
     </request>
   </xsl:variable>
   <xsl:for-each select="$request1">
-    <xsl:variable name="contentType" select=".//header[matches(name,'Content-Type','i')]/value"/>
+    <xsl:variable name="contentType" select=".//header[name='Content-Type']/value"/>
     <xsl:if test="not(contains($contentType, $VAR_GET_FEATURE_INFO_FORMAT))">
       <ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>',
         but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
@@ -3600,7 +3600,7 @@
     </request>
   </xsl:variable>
   <xsl:for-each select="$request1">
-    <xsl:variable name="contentType" select=".//header[matches(name,'Content-Type','i')]/value"/>
+    <xsl:variable name="contentType" select=".//header[name='Content-Type']/value"/>
     <xsl:if test="not(contains($contentType, $VAR_GET_FEATURE_INFO_FORMAT))">
       <ctl:message>[FAIL] Expected Content-Type '<xsl:value-of select="$VAR_GET_FEATURE_INFO_FORMAT"/>',
         but received '<xsl:value-of select=".//header[matches(name,'Content-Type','i')]/value"/>'.</ctl:message>
