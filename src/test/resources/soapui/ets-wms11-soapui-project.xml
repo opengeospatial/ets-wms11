@@ -31,7 +31,7 @@
           </con:assertion>
           <con:assertion type="Simple Contains" id="22cf9feb-0c51-49a3-9966-0f65761e01b3" name="Contains test suite">
             <con:configuration>
-              <token>Conformance Test Suite - OGC Web Map Service 1.3.0</token>
+              <token>Conformance Test Suite - OGC Web Map Service 1.1</token>
               <ignoreCase>false</ignoreCase>
               <useRegEx>false</useRegEx>
             </con:configuration>
