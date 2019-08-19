@@ -1,5 +1,12 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.19 (2019-08-19)
+   * [#68](https://github.com/opengeospatial/ets-wms11/pull/68) - Fixed Fortify Issues for DISASTIG
+   * [#72](https://github.com/opengeospatial/ets-wms11/issues/72) - REST API: URI of test suite is equal to WMS 1.3 test suite
+   * [#71](https://github.com/opengeospatial/ets-wms11/issues/71) - Update tests to use TEAM Engine 5.4
+   * [#62](https://github.com/opengeospatial/ets-wms11/issues/62) - Create SoapUI tests and integrate them into Maven and Jenkinsfile
+   * [#69](https://github.com/opengeospatial/ets-wms11/issues/69) - Test error "Error: A sequence of more than one item is not allowed as the first argument of contains()"
+
 ## 1.18 (2018-08-28)
    * [#63](https://github.com/opengeospatial/ets-wms11/issues/63) - Test wms:wmsops-getmap-params-exceptions-4 fails if format with parameter is used in request
    * [#60](https://github.com/opengeospatial/ets-wms11/issues/60) - Test wms:wmsops-getcapabilities-params-request-1 uses wrong request parameter value
