@@ -457,7 +457,8 @@
           </xsl:message>
 -->
 
-        <call-test name="wms:wms-no-profile">
+        <!-- Removed as per discussion in the issue#58. -->
+        <!-- <call-test name="wms:wms-no-profile">
           <with-param name="auto_updatesequence" select="$auto_updatesequence" />
           <with-param name="getfeatureinfo" select="$getfeatureinfo" />
           <with-param name="gif" select="$gif" />
@@ -515,9 +516,9 @@
           <with-param name="VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" select="$VAR_WMS_GET_FEATURE_INFO_HTTP_GET_URL" />
           <with-param name="VAR_WMS_GET_MAP_HTTP_GET_URL" select="$VAR_WMS_GET_MAP_HTTP_GET_URL" />
           <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
-        </call-test>
+        </call-test> -->
 
-        <xsl:if test="$basic_profile">
+        <xsl:if test="$basic_profile or $queryable_profile">
           <call-test name="wms:wms-basic">
             <with-param name="hosturl" select="$hosturl" />
             <with-param name="VAR_STDDATA_EXISTS" select="$VAR_STDDATA_EXISTS" />
