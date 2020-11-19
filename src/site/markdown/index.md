@@ -10,14 +10,8 @@ The [_Test Requirements and Assertions for WMS 1.1.1_](Web_Map_Server.html) docu
 
 
 # Reference Implementations
-GeoServer
 
- * [Description of how to run the test](http://docs.geoserver.org/stable/en/developer/cite-test-guide/index.html#run-wms-1-1-tests)
- * [GetCapabilities](http://cite.demo.opengeo.org:8080/geoserver_wms11/wms?service=wms%26request=getcapabilities%26version=1.1.1)
-
-deegree
-
- * [GetCapabilities](http://cite.lat-lon.de/deegree-webservices-3.3.6/services/wms?service=WMS%26version=1.1.1%26request=GetCapabilities)
+WMS 1.1 Reference Implementations are listed here: https://github.com/opengeospatial/cite/wiki/Reference-Implementations
 
 # Release Notes
 Release notes are available [here](relnotes.html).

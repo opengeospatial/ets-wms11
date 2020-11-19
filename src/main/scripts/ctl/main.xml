@@ -93,7 +93,7 @@
         <p>Certification is available for servers that implement either the
           BASIC profile or the QUERYABLE profile. In order to be certified,
           the server must implement the requirements for the profile as
-          described <a href="/tsOGC/ViewTestSpec?SPEC=Web_Map_Server.html&amp;TYPE=AVAILABLE&amp;sesstype=OGC#A.-Certification%20Requirements"
+          described <a href="https://opengeospatial.github.io/ets-wms11/Web_Map_Server.html#A.-Certification%20Requirements"
                        target="otherwindow">
             here</a>. Select which profile you want to test below.</p>
         <blockquote>
