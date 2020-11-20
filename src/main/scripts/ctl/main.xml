@@ -117,7 +117,7 @@
               <td align="center">
                 <input checked="checked" name="CERT_PROFILE" type="radio" value="queryable_profile"/>
               </td>
-              <td align="left">QUERYABLE(Basic + Queryable tests executed) - Certify that the server meets all
+              <td align="left">QUERYABLE (Basic + Queryable tests executed) - Certify that the server meets all
                 requirements for the QUERYABLE profile</td>
             </tr>
           </table>
