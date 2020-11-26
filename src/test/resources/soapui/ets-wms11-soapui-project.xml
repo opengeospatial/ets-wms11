@@ -262,11 +262,11 @@ declare namespace cite="http://cite.opengeospatial.org/";
     </con:property>
     <con:property>
       <con:name>iut</con:name>
-      <con:value>http://cite.deegree.org/deegree-webservices-3.4.0/services/wms111?service=WMS&amp;request=GetCapabilities</con:value>
+      <con:value>http://cite.deegree.org/deegree-webservices-3.4.5/services/wms111?service=WMS&amp;request=GetCapabilities</con:value>
     </con:property>
     <con:property>
       <con:name>tests.passed</con:name>
-      <con:value>134</con:value>
+      <con:value>137</con:value>
     </con:property>
     <con:property>
       <con:name>tests.skipped</con:name>
