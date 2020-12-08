@@ -98,13 +98,14 @@
             here</a>. Select which profile you want to test below.</p>
         <blockquote>
           <table border="3" padding="3">
-            <tr>
+            <!-- Removed as per discussion in the issue#58. -->
+            <!-- <tr>
               <td align="center">
                 <input name="CERT_PROFILE" type="radio" value="no_profile"/>
               </td>
               <td align="left">NONE - Do not certify that the server meets
                 requirements for any test profile</td>
-            </tr>
+            </tr> -->
             <tr>
               <td align="center">
                 <input name="CERT_PROFILE" type="radio" value="basic_profile"/>
@@ -116,7 +117,7 @@
               <td align="center">
                 <input checked="checked" name="CERT_PROFILE" type="radio" value="queryable_profile"/>
               </td>
-              <td align="left">QUERYABLE - Certify that the server meets all
+              <td align="left">QUERYABLE (Basic + Queryable tests executed) - Certify that the server meets all
                 requirements for the QUERYABLE profile</td>
             </tr>
           </table>

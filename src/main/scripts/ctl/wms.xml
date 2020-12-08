@@ -517,7 +517,7 @@
           <with-param name="VAR_WMS_VERSION" select="$VAR_WMS_VERSION" />
         </call-test>
 
-        <xsl:if test="$basic_profile">
+        <xsl:if test="$basic_profile or $queryable_profile">
           <call-test name="wms:wms-basic">
             <with-param name="hosturl" select="$hosturl" />
             <with-param name="VAR_STDDATA_EXISTS" select="$VAR_STDDATA_EXISTS" />
