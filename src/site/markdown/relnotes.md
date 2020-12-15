@@ -1,5 +1,9 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.20 (2020-12-15)
+   * [#58](https://github.com/opengeospatial/ets-wms11/issues/58) - Improve organisation of tests
+   * [#59](https://github.com/opengeospatial/ets-wms11/issues/59) - Improve documentation
+
 ## 1.19 (2019-08-19)
    * [#68](https://github.com/opengeospatial/ets-wms11/pull/68) - Fixed Fortify Issues for DISASTIG
    * [#72](https://github.com/opengeospatial/ets-wms11/issues/72) - REST API: URI of test suite is equal to WMS 1.3 test suite
