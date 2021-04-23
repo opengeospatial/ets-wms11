@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite>
+	<title>WMS 1.1 Conformance Test Suite</title>
+	<description>
+	    Verifies that a Web Map Service (WMS) implementation conforms to the relevant specifications:
+		OpenGIS Web Map Server Implementation Specification, Version 1.1.1 (OGC 01-068r3)
+		The test run arguments are summarized in the following table. The obligation
+		descriptor can have the following values: M (mandatory), O (optional), or C (conditional).
+	</description>
+	<testrunarguments>
+		<testrunargument>
+			<name>capabilities-url</name>
+			<valuedomain>URI</valuedomain>
+			<obligation>M</obligation>
+			<description>An absolute URI that refers to an XML representation of the service capabilities document.
+				This document does not need to be obtained from the service under test (SUT), but it must
+				describe the implementation under test (IUT). Ampersand ('&amp;') characters appearing within
+				a query parameter value must be percent-encoded as %26.</description>
+		</testrunargument>
+		<testrunargument>
+			<name>updatesequence</name>
+			<valuedomain>Enumeration: "manual" | "auto" (default)</valuedomain>
+			<obligation>O</obligation>
+			<description>The WMS spec allows servers to use an UpdateSequence value for maintaining cache consistency. 
+				If the server advertises an UpdateSequence value and the Automatic option is selected below, the test 
+				suite will attempt to test the UpdateSequence behavior automatically. However, the lexical ordering of 
+				UpdateSequence values is determined by the server, so the tests may not always be correct. If you 
+				suspect a problem, select the Manual option and enter the updateSequence values requested below.
+				1. manual - The updateSequence tests will use the values supplied below
+				2. auto - The updateSequence tests will use automatically generated updateSequence values
+			</description>
+		</testrunargument>
+		<testrunargument>
+			<name>low-updatesequence</name>
+			<valuedomain>String</valuedomain>
+			<obligation>C (required if updatesequence="manual")</obligation>
+			<description>A version that is lower than the current updateSequence value.</description>
+		</testrunargument>
+		<testrunargument>
+			<name>high-updatesequence</name>
+			<valuedomain>String</valuedomain>
+			<obligation>C (required if updatesequence="manual")</obligation>
+			<description>A version that is higher than the current updateSequence value.</description>
+		</testrunargument>
+		<testrunargument>
+			<name>profile</name>
+			<valuedomain>Enumeration: "basic" | "queryable" (default)
+			</valuedomain>
+			<obligation>O</obligation>
+			<description>Certification is available for servers that implement either the BASIC profile or the 
+				QUERYABLE profile. In order to be certified, the server must implement the requirements for the
+				profile. Select which profile you want to test below.
+				1. basic - Certify that the server meets all requirements for the BASIC profile
+				2. queryable - Certify that the server meets all requirements for the QUERYABLE profile
+			</description>
+		</testrunargument>
+		<testrunargument>
+			<name>recommended</name>
+			<valuedomain>Boolean (default: false)</valuedomain>
+			<obligation>O</obligation>
+			<description>Verify that the server supports fuctionality which is recommended in the spec, 
+			    but not required.</description>
+		</testrunargument>
+		<testrunargument>
+			<name>getfeatureinfo</name>
+			<valuedomain>Boolean (default: false)</valuedomain>
+			<obligation>O</obligation>
+			<description>Verify that the server supports the application/vnd.ogc.gml GetFeatureInfo format. This 
+			    test will pass only if the GML instance document returned contains a schemaLocation attribute 
+				to reference its schema, and validates correctly.
+			</description>
+		</testrunargument>
+		<testrunargument>
+			<name>feesconstraints</name>
+			<valuedomain>Boolean (default: false)</valuedomain>
+			<obligation>O</obligation>
+			<description>Verify that the server advertises that it does not require any fees or access constraints.</description>
+		</testrunargument>
+		<testrunargument>
+			<name>bboxconstraints</name>
+			<valuedomain>Enumeration: "loose" | "strict" | "either" (default)
+			</valuedomain>
+			<obligation>O</obligation>
+			<description>1. LOOSE - Verify that the server returns map data from the western hemisphere for 
+				area beyond 180 degrees east longitude
+				2. STRICT - Verify that the server does not return map data from the western hemisphere for 
+				area beyond 180 degrees east longitude
+				3. EITHER - Do not test area beyond 180 degrees east longitude
+			</description>
+		</testrunargument>
+	</testrunarguments>
+</testsuite>
