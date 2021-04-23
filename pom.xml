@@ -56,7 +56,7 @@
     <docker.teamengine.version>5.4.1</docker.teamengine.version>
     <soapui.test.fail.ignore>false</soapui.test.fail.ignore>
     <soapui.teamengine.endpoint>http://localhost:8081/teamengine</soapui.teamengine.endpoint>
-    <soapui.iut>http://cite.deegree.org/deegree-webservices-3.4.5/services/wms111?service=WMS&amp;request=GetCapabilities</soapui.iut>
+    <soapui.iut>http://cite.deegree.org/deegree-webservices-3.4.12/services/wms111?service=WMS&amp;request=GetCapabilities</soapui.iut>
     <soapui.tests.passed>137</soapui.tests.passed>
     <soapui.tests.skipped>0</soapui.tests.skipped>
     <soapui.tests.failed>0</soapui.tests.failed>
