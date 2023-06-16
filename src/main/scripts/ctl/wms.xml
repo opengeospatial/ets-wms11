@@ -1240,7 +1240,7 @@
       </ctl:for-each>
 
       <ctl:for-each
-              select="$VAR_WMS_CAPABILITIES//Layer//SRS[not(. = ../preceding::Layer/SRS) and not(. = ../ancestor::Layer/SRS) and not(starts-with(., 'AUTO'))]">
+              select="$VAR_WMS_CAPABILITIES//Layer//SRS[not(. = ../preceding::Layer/SRS) and not(. = ../ancestor::Layer/SRS) and not(starts-with(., 'AUTO')) and (position()=1 or position()=2 or position()=3 or position()=4 or position()=5 or position()=6 or position()=7 or position()=8 or position()=9 or position()=10)]">
         <ctl:call-test name="wms:wmsops-getmap-each-srs">
           <ctl:with-param name="WMS_CAPABILITIES" select="$VAR_WMS_CAPABILITIES" />
           <ctl:with-param name="srs" select="." label="each SRS" label-expr="concat('SRS &quot;', ., '&quot;')" />
