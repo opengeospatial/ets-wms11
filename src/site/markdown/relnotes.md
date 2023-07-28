@@ -1,5 +1,9 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.22 (2023-07-28)
+   * [#84](https://github.com/opengeospatial/ets-wms11/pull/84) - Introduce limit of 10 for tested SRS
+   * [#83](https://github.com/opengeospatial/ets-wms11/pull/83) - Add credentials to SoapUI project
+
 ## 1.21 (2022-02-25)
    * [#78](https://github.com/opengeospatial/ets-wms11/issues/78) - Add template to get an XML/JSON response via rest endpoint
    * [#82](https://github.com/opengeospatial/ets-wms11/pull/82) - Bump commons-io from 1.3.2 to 2.7
