@@ -1,5 +1,11 @@
 # Release Notes OGC WMS 1.1.1 Test Suite
 
+## 1.23 (2025-03-04)
+
+Attention: Java 17 and Tomcat 10.1 are required.
+
+   * [#86](https://github.com/opengeospatial/ets-wms11/issues/86) - Migrate test suite to TEAM Engine 6 (Java 17)
+
 ## 1.22 (2023-07-28)
    * [#84](https://github.com/opengeospatial/ets-wms11/pull/84) - Introduce limit of 10 for tested SRS
    * [#83](https://github.com/opengeospatial/ets-wms11/pull/83) - Add credentials to SoapUI project
